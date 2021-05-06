@@ -11,8 +11,8 @@ function contact(){
                     <a>About Me</a>
                 </Link>
             </nav>
-            <div className='content-center'>
-                <h1>Want to get in touch?</h1>
+            <div className='bg-black bg-opacity-75 text-white'>
+                <h1 className='flex content-center'>Want to get in touch?</h1>
                 <h2><a href='https://www.linkedin.com/in/lasj'>LinkedIn</a></h2>
                 <h2><a href='https://www.twitter.com/LuisDoesSE'>Twitter</a></h2>
                 <h3>Old School?</h3>
