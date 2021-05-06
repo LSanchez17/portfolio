@@ -1,6 +1,16 @@
+import Link from 'next/link'
+
 function contact(){
     return (
         <div className='w-screen h-screen bg-blue-300 bg-opacity-75'>
+            <nav>
+                <Link href='/projects'>
+                    <a>Projects</a>
+                </Link>
+                <Link href='/about'>
+                    <a>About Me</a>
+                </Link>
+            </nav>
             <div className='content-center'>
                 <h1>Want to get in touch?</h1>
                 <h2><a href='https://www.linkedin.com/in/lasj'>LinkedIn</a></h2>

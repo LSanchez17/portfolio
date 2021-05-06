@@ -1,8 +1,16 @@
-import Head from "next/head";
+import Link from 'next/link'
 
 function about(){
     return (
         <div className='w-screen h-screen bg-blue-300 bg-opacity-75'>
+            <nav>
+                <Link href='/projects'>
+                    <a>Projects</a>
+                </Link>
+                <Link href='/contact'>
+                    <a>Contact</a>
+                </Link>
+            </nav>
             <div>
                 <h2>About Me</h2>
                 <p>Software Engineer. Driven, results oriented, resourceful, and brimming with a 
