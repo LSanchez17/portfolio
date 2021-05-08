@@ -1,6 +1,17 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import dynamic from 'next/dynamic';
+
+const Particles = dynamic(
+  //dynamic sideloads the npm packages that require window access
+  //by negativ the server side rendering, we get access to the window
+  //while still being "NEXT"
+    () => import('particles-bg'),
+    {
+      ssr: false
+    }
+)
 
 export default function Home() {
   return (
@@ -8,11 +19,12 @@ export default function Home() {
       <div className={styles.container}>
       <Head>
         <title>Luis Software Engineer</title>
-        <meta name="description" content="Luis, software engineer" />
+        <meta name="description" content="Luis, Software Engineer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
+        <Particles color='FA011F' type='cobweb' bg={true} />
         <h3 className={styles.title}>
         Welcome to my humble abode
         </h3>
