@@ -2,18 +2,18 @@ import Link from 'next/link'
 
 function about(){
     return (
-        <div className='w-screen h-screen bg-blue-300 bg-opacity-75'>
-            <nav>
+        <div className='w-screen h-screen bg-gradient-to-b from-purple-500 via-blue-500 to-green-400 bg-opacity-50'>
+            <nav className='text-white p-4'>
                 <Link href='/projects'>
-                    <a>Projects</a>
+                    <a className='rounded border-3 bg-purple-400 bg-opacity-75 shadow-lg p-3 m-2'>Projects</a>
                 </Link>
                 <Link href='/contact'>
-                    <a>Contact</a>
+                    <a className='rounded border-3 bg-purple-400 bg-opacity-75 shadow-lg p-3 m-2'>Contact</a>
                 </Link>
             </nav>
-            <div>
-                <h2>About Me</h2>
-                <p>Software Engineer. Driven, results oriented, resourceful, and brimming with a 
+            <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2'>
+                <h2 className='grid place-content-center p-4'>About Me</h2>
+                <p className='place-content-center p-3'>Software Engineer. Driven, results oriented, resourceful, and brimming with a 
                    vast curiosity when it comes to the world of technology. Creating solutions to complex problems, 
                    creating useful tools for the business, and impacting the lives of many people with just a 
                    few lines of code is remarkable. Consistently enhancing my craft through education, 
@@ -21,22 +21,11 @@ function about(){
                    deployments to see some of my past and current work!
                 </p>
 
-                <h3>Technology Skills:</h3>
-                <ul>
+                <h3 className='place-content-center p-2'>Technology Skills:</h3>
+                <ul className='p-2'>
                     <li>Languages: Javascript, SQL, Python, HTML, CSS</li>
                     <li>Frameworks, Libraries & Runtimes: React, Redux, Jinja, Bootstrap, jQuery, Node, Express, Jest, Jasmine, Flask, SQLAlchemy, Axios, WTForms, HandleBars</li>
                     <li>Topics: Database Systems, Data Structures & Algorithms, Operating Systems, Computer Architecture</li>
-                </ul>
-
-                <h3>After hours, here are some hobbies of interest:</h3>
-                <ul>
-                    <li>Gardening</li>
-                    <li>Cooking</li>
-                    <li>Exercising</li>
-                    <li>Video Games</li>
-                    <li>Reading</li>
-                    <li>Sudoku</li>
-                    <li>Anime</li>
                 </ul>
             </div>
         </div>
