@@ -15,11 +15,11 @@ function contact(){
                 </Link>
             </nav>
             <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
-                <h1 className='grid place-content-center inline-block align-middle pb-3'>Want to get in touch?</h1>
+                <h1 className='grid place-content-center inline-block align-middle pb-3 text-3xl'>Want to get in touch?</h1>
                 
                 <div className='grid place-content-evenly my-2'>
-                    <h3 className='my-2'><a href='https://www.linkedin.com/in/lasj'><span>LinkedIn <img className='inline my-1 h-6 w-6' src='./linkedin.png'></img></span></a></h3>
-                    <h3 className='my-2'><a href='https://www.twitter.com/LuisDoesSE'><span>Twitter <img className='inline my-1 h-6 w-6' src='./twitter.png'></img></span></a></h3>
+                    <h3 className='my-2 text-3xl inline-block align-middle'><a href='https://www.linkedin.com/in/lasj'><span>LinkedIn <img className='inline my-1 h-7 w-7' src='./linkedin.png'></img></span></a></h3>
+                    <h3 className='my-2 text-3xl inline-block align-middle'><a href='https://www.twitter.com/LuisDoesSE'><span>Twitter <img className='inline my-1 h-7 w-7' src='./twitter.png'></img></span></a></h3>
                 </div>
             </div>
         </div>

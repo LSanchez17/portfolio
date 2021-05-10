@@ -18,13 +18,13 @@ export default function Home() {
     <div className='w-screen h-screen bg-gradient-to-b from-purple-500 via-blue-500 to-green-400 bg-opacity-50'>
       <div className={styles.container}>
       <Head>
-        <title>Luis Software Engineer</title>
+        <title>Luis-Software Engineer</title>
         <meta name="description" content="Luis, Software Engineer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <Particles color='FA011F' type='cobweb' bg={true} />
+        <Particles color='000000' type='cobweb' bg={true} />
         <h3 className={styles.title}>
         Welcome to my humble abode
         </h3>

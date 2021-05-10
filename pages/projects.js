@@ -16,7 +16,8 @@ function projects(){
             </nav>
 
             <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
-                <h2 className='grid place-content-center inline-block align-middle pb-3'>Projects</h2>
+                <h1 className='grid place-content-center inline-block align-middle pb-3 text-3xl'>Projects</h1>
+
                 <div className='rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='inline-block align-middle'>Plant Keeper</h3>
                     <p className='my-2 p-1'>Helps organize and maintain a user's house plants.  Dashboard to remind them when 
@@ -25,6 +26,9 @@ function projects(){
                        Tech: Flask, Python, Javascript, Bootstrap, HTML/CSS</p>
                     <a className='my-2 p-1 hover:underline' href='https://plant-keeper.herokuapp.com/'>Live Link</a>
                 </div>
+
+                <div className='p-1'></div>
+
                 <div className='rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='inline-block align-middle'>Safe For Pet</h3>
                     <p className='my-2 p-1'>Application created to help a user determine if a food is "safe" for their pet. 
@@ -34,6 +38,9 @@ function projects(){
                        Tech: Javascript, Express, React, HTML/CSS, Bootstrap</p>
                     <a className='my-1 p-1 hover:underline' href='http://safe-for-pet.surge.sh/'>Live Link</a>
                 </div>
+
+                <div className='p-1'></div>
+
                 <div className='rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='inline-block align-middle'>NASA Hackathon</h3>
                     <p className='my-2 p-1'>This website is designed to help you figure out how to respond to biased comments. 
@@ -41,7 +48,10 @@ function projects(){
                        Tech: Javascript, Flask, Python, Bootstrap</p>
                     <a className='my-2 p-1 hover:underline' href='https://better-together-tardigrades.herokuapp.com/'>Live Link</a>
                 </div>
-                <div className='grid place-content-center rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1'>
+
+                <div className='p-1'></div>
+
+                <div className='grid place-content-center rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1 text-2xl'>
                     <a href='https://www.github.com/LSanchez17'><h2>Github <span><img className='inline my-1 h-6 w-6' src='./github-sign.png'></img></span></h2></a>
                 </div>
             </div>

@@ -15,7 +15,7 @@ function about(){
                 </Link>
             </nav>
             <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
-                <h2 className='grid place-content-center p-4 inline-block align-middle pb-3'>About Me</h2>
+                <h2 className='grid place-content-center p-4 inline-block align-middle pb-3 text-3xl'>About Me</h2>
                 <div className='rounded border-1 shadow-md bg-blue-200 bg-opacity-25 my-1 p-2'>
                     <p className='place-content-center p-3'>Software Engineer. Driven, results oriented, resourceful, and brimming with a 
                        vast curiosity when it comes to the world of technology. Creating solutions to complex problems, 
