@@ -11,7 +11,7 @@ function about(){
                     <a className='rounded border-3 bg-purple-400 bg-opacity-75 shadow-lg p-3 m-2'>Contact</a>
                 </Link>
             </nav>
-            <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2'>
+            <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
                 <h2 className='grid place-content-center p-4'>About Me</h2>
                 <p className='place-content-center p-3'>Software Engineer. Driven, results oriented, resourceful, and brimming with a 
                    vast curiosity when it comes to the world of technology. Creating solutions to complex problems, 
