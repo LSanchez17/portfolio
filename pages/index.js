@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
 import dynamic from 'next/dynamic';
-import { useEffect } from 'react';
 
 const Particles = dynamic(
   //dynamic sideloads the npm packages that require window access
@@ -15,53 +13,42 @@ const Particles = dynamic(
 )
 
 export default function Home() {
-  let show = false;
-
-  // useEffect(() => {
-  //   const FadeIn = () => {
-  //     window.setTimeout(() => {
-  //       show = !show;
-  //     }, 1000);
-  //   }
-
-  //   FadeIn();
-  // }, [])
-
-  let homePage = (<div className={styles.container}>
+  let homePage = (
+  <div className={styles.container}>
     <Head>
       <title>Luis-Software Engineer</title>
       <meta name="description" content="Luis, Software Engineer" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
+    <h3 className='text-4xl static'>
+      Welcome to my humble abode
+    </h3>
+
     <main className={styles.main}>
       <Particles color='000000' type='cobweb' bg={true} />
-      <h3 className={styles.title}>
-      Welcome to my humble abode
-      </h3>
 
-      <div className={styles.grid}>
-        <Link href="/projects" className={styles.card}>
-          <div className={styles.card}>
-            <h2><a>Projects &rarr;</a></h2>
-            <p>View an evergrowing list of projects I've completed and work on</p>  
+      <div className='h-64 grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
+          <div className='m-2 p-5 shadow-xl'>
+            <div className='text-center'>
+              <h2><button>Projects</button></h2>
+              <p>View my work</p>  
+            </div>
           </div>
-        </Link>
 
-        <Link href="/contact" className={styles.card}>
-          <div className={styles.card}>
-            <h2><a>Contact &rarr;</a></h2>
-            <p>Want to initiate a dialogue, have questions, comments, compliments? </p>
+          <div className='m-2 p-5 shadow-xl'>
+            <div className='text-center'>
+              <h2><button>Contact</button></h2>
+              <p>Want to connect?</p>
+            </div>
           </div>
-        </Link>
 
-        <Link href="/about" className={styles.card}>
-          <div className={styles.card}>
-            <h2><a>About &rarr;</a></h2>
-            <p>Discover more about your next potential hire</p>
-          </div>
-        </Link>
-        
+          <div className='m-2 p-5 shadow-xl'>
+            <div className='text-center'>
+              <h2><button>About</button></h2>
+              <p>Read more about the developer</p>
+            </div>
+          </div>        
 
       </div>
     </main>
