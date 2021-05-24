@@ -29,8 +29,8 @@ export default function Home() {
       <Particles color='000000' type='cobweb' bg={true} />
 
       <div className='h-64 grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
-          <div className='m-2 p-5 shadow-xl'>
-            <div className='text-center'>
+          <div className='m-1 p-8 shadow-xl rounded-full'>
+            <div className='pt-4 text-center'>
               <h2><button>Projects</button></h2>
               <p>View my work</p>  
             </div>
