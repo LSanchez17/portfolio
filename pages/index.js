@@ -35,7 +35,7 @@ export default function Home() {
   }
 
   return (
-    <div className='w-screen h-screen bg-gradient-to-b from-purple-500 via-blue-500 to-green-400 bg-opacity-50'>
+    <div className='bg-white filter grayscale'>
       {!showing ? <HomePage projects={showProjects} contacts={showContact} about={showAbout} /> : showing}
     </div>
   )

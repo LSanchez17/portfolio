@@ -1,11 +1,10 @@
 const projects = ({about, contacts, reset}) => {
     return (
         <div className=''>
+            <div className='text-black rounded border-2 p-2 shadow-sm bg-green-300 bg-opacity-50 my-2 mx-6'>
+                <h1 className='grid place-content-center inline-block align-middle pb-2 text-3xl'>Projects</h1>
 
-            <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
-                <h1 className='grid place-content-center inline-block align-middle pb-3 text-3xl'>Projects</h1>
-
-                <div className='rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1'>
+                <div className='rounded border-1 p-1 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='inline-block align-middle'>Plant Keeper</h3>
                     <p className='my-2 p-1'>Helps organize and maintain a user's house plants.  Dashboard to remind them when 
                        a plant needs watered, trimmed, repotted, and informs them of their current weather.  
@@ -34,6 +33,17 @@ const projects = ({about, contacts, reset}) => {
                        We hope it will be a starting point for reflection. Collaborative project with other developers.
                        Tech: Javascript, Flask, Python, Bootstrap</p>
                     <a className='my-2 p-1 hover:underline' href='https://better-together-tardigrades.herokuapp.com/'>Live Link</a>
+                </div>
+
+                <div className='p-1'></div>
+
+                <div className='rounded border-1 p-1 shadow-md bg-blue-200 bg-opacity-25 my-1'>
+                    <h3 className='inline-block align-middle'>Interal inventory Tool</h3>
+                    <p className='my-2 p-1'>Helps me avoid coming in at 4am during perishable inventory.  Automates a highly manual task of counting individual items, 
+                    multiplying those items by a average weight, and entering them into a handheld device.  Automates this process with two buttons, and a 
+                    generated UPC barcode.  Saves me 1.5 hours.
+                       Tech: Javascript, TailwindCSS, React, HTML/CSS</p>
+                    <a className='my-2 p-1 hover:underline' href='https://plant-keeper.herokuapp.com/'>Live Link</a>
                 </div>
 
                 <div className='p-1'></div>

@@ -2,7 +2,7 @@ const contact = ({projects, about, reset}) =>{
 
     return (
         <div className=''>
-            <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
+            <div className='text-black rounded border-2 p-2 shadow-sm bg-green-300 bg-opacity-50 my-2 mx-6'>
                 <h1 className='grid place-content-center inline-block align-middle pb-3 text-3xl'>Want to get in touch?</h1>
                 
                 <div className='grid place-content-evenly my-2'>

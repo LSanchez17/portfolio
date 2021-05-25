@@ -1,15 +1,14 @@
 const about = ({projects, contacts, reset}) => {
     return (
-        <div className=''>
-            <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
+        <div>
+            <div className='text-black rounded border-2 p-2 shadow-sm bg-green-300 bg-opacity-50 my-2 mx-6'>
                 <h2 className='grid place-content-center p-4 inline-block align-middle pb-3 text-3xl'>About Me</h2>
                 <div className='rounded border-1 shadow-md bg-blue-200 bg-opacity-25 my-1 p-2'>
-                    <p className='place-content-center p-3'>Software Engineer. Driven, results oriented, resourceful, and brimming with a 
-                       vast curiosity when it comes to the world of technology. Creating solutions to complex problems, 
-                       creating useful tools for the business, and impacting the lives of many people with just a 
-                       few lines of code is remarkable. Consistently enhancing my craft through education, 
-                       personal projects, & meetups/talks. Feel free to check out on my Github and Heroku 
-                       deployments to see some of my past and current work!
+                    <img className='w-64 h-64 rounded-full items-start' src='./plantTopia.jpeg'></img>
+                    <p className='flex items-end p-3'>Software Engineer. Writing quality, tested, and scalable code. Experienced with modern frameworks, 
+                    tools, and libraries. I love creating solutions to problems, automating repetitive tasks to save time and resources, and improving the 
+                    lives of those around me with code is what I strive for. I improve my craft through educational opportunities, conferences/meet ups, 
+                    articles, and side projects.
                     </p>
                 </div>
                 <div className='p-2'></div>
@@ -22,6 +21,7 @@ const about = ({projects, contacts, reset}) => {
                     </ul>
                 </div>
             </div>
+            
             <div className='h-64 grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
                 <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>
