@@ -1,19 +1,6 @@
-import Link from 'next/link'
-
-function projects(){
+const projects = ({about, contacts, reset}) => {
     return (
-        <div className='w-screen h-screen bg-gradient-to-b from-purple-500 via-blue-500 to-green-400 bg-opacity-50'>
-             <nav className='text-white p-4'>
-                <Link href='/about'>
-                    <a className='rounded border-3 bg-purple-400 bg-opacity-75 shadow-lg p-3 m-2'>About</a>
-                </Link>
-                <Link href='/contact'>
-                    <a className='rounded border-3 bg-purple-400 bg-opacity-75 shadow-lg p-3 m-2'>Contact</a>
-                </Link>
-                <Link href='/'>
-                    <a className='rounded border-3 bg-purple-400 bg-opacity-75 shadow-lg p-3 m-2'>Home</a>
-                </Link>
-            </nav>
+        <div className=''>
 
             <div className='text-white rounded border-2 p-4 shadow-sm bg-green-500 bg-opacity-25 my-2 mx-6'>
                 <h1 className='grid place-content-center inline-block align-middle pb-3 text-3xl'>Projects</h1>
@@ -55,6 +42,30 @@ function projects(){
                     <a href='https://www.github.com/LSanchez17'><h2>Github <span><img className='inline my-1 h-6 w-6' src='./github-sign.png'></img></span></h2></a>
                 </div>
             </div>
+
+            <div className='h-64 grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
+                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                  <div className='pt-8 text-center'>
+                    <button onClick={reset}><h1 className='text-xl'>Home</h1></button>
+                    <p>Return home?</p>  
+                  </div>
+                </div>
+      
+                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                  <div className='pt-8 text-center'>
+                    <button onClick={contacts}><h1 className='text-xl'>Contacts</h1></button>
+                    <p>Want to connect?</p>
+                  </div>
+                </div>
+      
+                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                  <div className='pt-7 text-center'>
+                    <button onClick={about}><h1 className='text-xl'>About</h1></button>
+                    <p>More about the developer</p>
+                  </div>
+                </div>  
+            </div>
+
         </div>
     );
 };
