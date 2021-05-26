@@ -2,7 +2,7 @@ const contact = ({projects, about, reset}) =>{
 
     return (
         <div className=''>
-            <div className='text-black rounded border-2 p-2 shadow-sm bg-green-300 bg-opacity-50 my-2 mx-6'>
+            <div className='text-black rounded border-2 p-2 shadow-sm bg-indigo-100 bg-opacity-50 my-2 mx-6'>
                 <h1 className='grid place-content-center inline-block align-middle pb-3 text-3xl'>Want to get in touch?</h1>
                 
                 <div className='grid place-content-evenly my-2'>
@@ -17,7 +17,7 @@ const contact = ({projects, about, reset}) =>{
                     <button onClick={projects}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out bg-white 
-                                       hover:bg-blue-400 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Projects</h1>
+                                       hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Projects</h1>
                     </button>
                     <p>View my work</p>  
                   </div>
@@ -28,7 +28,7 @@ const contact = ({projects, about, reset}) =>{
                     <button onClick={reset}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out bg-white 
-                                       hover:bg-blue-400 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Home</h1>
+                                       hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Home</h1>
                     </button>
                     <p>Return home?</p>
                   </div>
@@ -39,7 +39,7 @@ const contact = ({projects, about, reset}) =>{
                     <button onClick={about}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out bg-white 
-                                       hover:bg-blue-400 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>About</h1>
+                                       hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>About</h1>
                     </button>
                     <p>More about the developer</p>
                   </div>

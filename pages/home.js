@@ -24,7 +24,7 @@ const HomePage = ({projects, contacts, about}) => {
                     <button onClick={projects}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out bg-white 
-                                       hover:bg-blue-400 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Projects</h1>
+                                       hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Projects</h1>
                     </button>
                     <p>View my work</p>  
                   </div>
@@ -35,7 +35,7 @@ const HomePage = ({projects, contacts, about}) => {
                     <button onClick={contacts}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out bg-white 
-                                       hover:bg-blue-400 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Contact</h1>
+                                       hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Contact</h1>
                     </button>
                     <p>Want to connect?</p>
                   </div>
@@ -46,7 +46,7 @@ const HomePage = ({projects, contacts, about}) => {
                     <button onClick={about}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out bg-white 
-                                       hover:bg-blue-400 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>About</h1>
+                                       hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>About</h1>
                     </button>
                     <p>More about the developer</p>
                   </div>

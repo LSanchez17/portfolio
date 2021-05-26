@@ -35,7 +35,7 @@ export default function Home() {
   }
 
   return (
-    <div className='bg-gradient-to-t filter grayscale'>
+    <div className='backdrop-filter backdrop-grayscale'>
       {!showing ? <HomePage projects={showProjects} contacts={showContact} about={showAbout} /> : showing}
     </div>
   )
