@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import Projects from '../pages/projects'
 import Contact from '../pages/contact'
 import About from '../pages/about'
@@ -35,7 +35,7 @@ export default function Home() {
   }
 
   return (
-    <div className='bg-white filter grayscale'>
+    <div className='bg-gradient-to-t filter grayscale'>
       {!showing ? <HomePage projects={showProjects} contacts={showContact} about={showAbout} /> : showing}
     </div>
   )
