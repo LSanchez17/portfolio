@@ -35,7 +35,7 @@ export default function Home() {
   }
 
   return (
-    <div className='bg-yellow-50 bg-opacity-75 h-screen'>
+    <div className='h-screen'>
       {!showing ? <HomePage projects={showProjects} contacts={showContact} about={showAbout} /> : showing}
     </div>
   )

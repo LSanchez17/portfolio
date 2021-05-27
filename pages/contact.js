@@ -1,8 +1,19 @@
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+
 const contact = ({projects, about, reset}) =>{
 
     return (
-        <div>
-            <div className='text-black rounded border-2 p-2 shadow-sm bg-indigo-100 bg-opacity-50 my-2 mx-6'>
+        <div className={styles.container}>
+            <Head>
+                <title>Luis-Software Engineer</title>
+                <meta name="description" content="Luis, Software Engineer" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+
+            <main className={styles.main}>
+
+            <div className='text-black rounded border-2 p-8 shadow-sm bg-indigo-100 bg-opacity-50'>
                 <h1 className='grid place-content-center inline-block align-middle pb-3 text-3xl'>Want to get in touch?</h1>
                 
                 <div className='grid place-content-evenly my-2'>
@@ -11,8 +22,10 @@ const contact = ({projects, about, reset}) =>{
                 </div>
             </div>
 
-            <div className='h-64 grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+            <div className='p-3'></div>
+
+            <div className='grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>
                     <button onClick={projects}>
                         <h1 className='text-xl grayscale-0
@@ -23,7 +36,7 @@ const contact = ({projects, about, reset}) =>{
                   </div>
                 </div>
       
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>
                     <button onClick={reset}>
                         <h1 className='text-xl grayscale-0
@@ -34,8 +47,8 @@ const contact = ({projects, about, reset}) =>{
                   </div>
                 </div>
       
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
-                  <div className='pt-7 text-center'>
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                  <div className='pt-8 text-center'>
                     <button onClick={about}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out 
@@ -45,6 +58,7 @@ const contact = ({projects, about, reset}) =>{
                   </div>
                 </div>  
             </div>
+        </main>
 
         </div>
     );

@@ -12,14 +12,14 @@ const HomePage = ({projects, contacts, about}) => {
       
           <main className={styles.main}>
       
-            <div className='bg-black-500 p-7'>
+            <div className='p-48'>
                 <h3 className='text-4xl static'>
                 Welcome to my humble abode
                 </h3>
             </div>
       
-            <div className='h-64 grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+            <div className='grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>
                     <button onClick={projects}>
                         <h1 className='text-xl grayscale-0
@@ -30,7 +30,7 @@ const HomePage = ({projects, contacts, about}) => {
                   </div>
                 </div>
       
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>
                     <button onClick={contacts}>
                         <h1 className='text-xl grayscale-0
@@ -41,8 +41,8 @@ const HomePage = ({projects, contacts, about}) => {
                   </div>
                 </div>
       
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
-                  <div className='pt-7 text-center'>
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                  <div className='pt-8 text-center'>
                     <button onClick={about}>
                         <h1 className='focus:outline-none
                                        text-xl grayscale-0

@@ -1,6 +1,17 @@
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+
 const about = ({projects, contacts, reset}) => {
     return (
-        <div className='h-screen'>
+        <div className={styles.container}>
+            <Head>
+                <title>Luis-Software Engineer</title>
+                <meta name="description" content="Luis, Software Engineer" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            
+            <main className={styles.main}>
+
             <div className='text-black rounded border-2 p-2 shadow-sm bg-indigo-100 bg-opacity-50 my-2 mx-6'>
                 <h2 className='grid place-content-center p-4 inline-block align-middle pb-3 text-3xl'>About Me</h2>
                 <div className='rounded border-1 shadow-md bg-blue-200 bg-opacity-25 my-1 p-2'>
@@ -21,7 +32,9 @@ const about = ({projects, contacts, reset}) => {
                 </div>
             </div>
             
-            <div className='h-64 grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
+            <div className='p-3'></div>
+
+            <div className='grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
                 <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>
                     <button onClick={reset}>
@@ -33,7 +46,7 @@ const about = ({projects, contacts, reset}) => {
                   </div>
                 </div>
       
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>
                     <button onClick={projects}>
                         <h1 className='text-xl grayscale-0
@@ -44,8 +57,8 @@ const about = ({projects, contacts, reset}) => {
                   </div>
                 </div>
       
-                <div className='border-light-blue-500 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
-                  <div className='pt-7 text-center'>
+                <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
+                  <div className='pt-8 text-center'>
                     <button onClick={contacts}>
                         <h1 className='text-xl grayscale-0
                                        transition duration-500 ease-in-out 
@@ -55,6 +68,7 @@ const about = ({projects, contacts, reset}) => {
                   </div>
                 </div>  
             </div>
+            </main>
         </div>
     );
 };
