@@ -1,12 +1,12 @@
 const projects = ({about, contacts, reset}) => {
     return (
-        <div className=''>
-            <div className='text-black rounded border-2 p-2 shadow-sm bg-indigo-100 bg-opacity-50 my-2 mx-6'>
+        <div>
+            <div className='text-black rounded border-2 p-3 shadow-sm bg-indigo-100 bg-opacity-50 my-2 mx-6'>
                 <h1 className='grid place-content-center inline-block align-middle pb-2 text-3xl'>Projects</h1>
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='grid place-content-center text-xl'>Plant Keeper</h3>
-                    <p className='my-2 p-1'>Full stack application that helps users keep track of when to water, trim, or repot their plants</p>
+                    <p className='my-2 p-2'>Full stack application that helps users keep track of when to water, trim, or repot their plants</p>
                     <ul className='list-disc list-inside'>
                         <li>Full user creation, login/logout, deletion, update features through API endpoints</li>
                         <li>Modular design using Jinja to facilitate user interface display</li>
@@ -19,7 +19,7 @@ const projects = ({about, contacts, reset}) => {
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='grid place-content-center text-xl'>Safe For Pet</h3>
-                    <p className='my-2 p-1'>Full stack application that lets a user ask the question, can my dog eat this?</p>
+                    <p className='my-2 p-2'>Full stack application that lets a user ask the question, can my dog eat this?</p>
                         <ul className='list-disc list-inside'>
                             <li>Handles text input, voice input, or no input from users</li>
                             <li>Communicates with custom REST API endpoints for data retrieval through Postgres</li>
@@ -32,7 +32,7 @@ const projects = ({about, contacts, reset}) => {
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='grid place-content-center text-xl'>NASA Hackathon</h3>
-                    <p className='my-2 p-1'>Collaborative group hackathon project for NASA's Space App Hackathon</p>
+                    <p className='my-2 p-2'>Collaborative group hackathon project for NASA's Space App Hackathon</p>
                     <ul className='list-disc list-inside'>
                         <li>Collaborated with 3 other software engineers through zoom and slack, and git/github</li>
                         <li>Allows the creation of scenarios through form submission, displayed with Jinja</li>
@@ -45,7 +45,7 @@ const projects = ({about, contacts, reset}) => {
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
                     <h3 className='grid place-content-center text-xl'>Interal Inventory Tool</h3>
-                    <p className='my-2 p-1'>Inventory tool to automate manual counting, improve accuracy, and reduce work at my current employer</p>
+                    <p className='my-2 p-2'>Inventory tool to automate manual counting, improve accuracy, and reduce work at my current employer</p>
                     <ul className='list-disc list-inside'>
                         <li>Creates customizable list of items based on a JSON object</li>
                         <li>Displays total weight for a user to enter, based on current count</li>
@@ -67,7 +67,7 @@ const projects = ({about, contacts, reset}) => {
                   <div className='pt-8 text-center'>
                     <button onClick={reset}>
                         <h1 className='text-xl grayscale-0
-                                       transition duration-500 ease-in-out bg-white 
+                                       transition duration-500 ease-in-out 
                                        hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Home</h1>
                     </button>
                     <p>Return home?</p>  
@@ -78,7 +78,7 @@ const projects = ({about, contacts, reset}) => {
                   <div className='pt-8 text-center'>
                     <button onClick={contacts}>
                         <h1 className='text-xl grayscale-0
-                                       transition duration-500 ease-in-out bg-white 
+                                       transition duration-500 ease-in-out  
                                        hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>Contact</h1>
                     </button>
                     <p>Want to connect?</p>
@@ -89,7 +89,7 @@ const projects = ({about, contacts, reset}) => {
                   <div className='pt-7 text-center'>
                     <button onClick={about}>
                         <h1 className='text-xl grayscale-0
-                                       transition duration-500 ease-in-out bg-white 
+                                       transition duration-500 ease-in-out 
                                        hover:bg-yellow-100 rounded-full p-2 transform hover:-translate-y-0 hover:scale-110'>About</h1>
                     </button>
                     <p>More about the developer</p>
