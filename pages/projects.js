@@ -4,51 +4,60 @@ const projects = ({about, contacts, reset}) => {
             <div className='text-black rounded border-2 p-2 shadow-sm bg-indigo-100 bg-opacity-50 my-2 mx-6'>
                 <h1 className='grid place-content-center inline-block align-middle pb-2 text-3xl'>Projects</h1>
 
-                <div className='rounded border-1 p-1 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='inline-block align-middle'>Plant Keeper</h3>
-                    <p className='my-2 p-1'>Helps organize and maintain a user's house plants.  Dashboard to remind them when 
-                       a plant needs watered, trimmed, repotted, and informs them of their current weather.  
-                       Ability to search for other plants through the use of Treffle's API.
-                       Tech: Flask, Python, Javascript, Bootstrap, HTML/CSS</p>
-                    <a className='my-2 p-1 hover:underline' href='https://plant-keeper.herokuapp.com/'>Live Link</a>
+                <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
+                    <h3 className='grid place-content-center text-xl'>Plant Keeper</h3>
+                    <p className='my-2 p-1'>Full stack application that helps users keep track of when to water, trim, or repot their plants</p>
+                    <ul className='list-disc list-inside'>
+                        <li>Full user creation, login/logout, deletion, update features through API endpoints</li>
+                        <li>Modular design using Jinja to facilitate user interface display</li>
+                        <li>Handles reminders of when to take care of a user's plants through date objects and weather data from outside API</li>
+                    </ul>
+                    <a className='m-1 p-1 hover:bg-pink-200 rounded-full p-1' href='https://plant-keeper.herokuapp.com/'>Live Link</a>
                 </div>
 
                 <div className='p-1'></div>
 
-                <div className='rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='inline-block align-middle'>Safe For Pet</h3>
-                    <p className='my-2 p-1'>Application created to help a user determine if a food is "safe" for their pet. 
-                       Set to dog mode at the moment, but backend built to be scaled to any pet.  
-                       Informative section, showing number of voices queries made, number of unique visitors, 
-                       and a current list of all the foods available in the database.
-                       Tech: Javascript, Express, React, HTML/CSS, Bootstrap</p>
-                    <a className='my-1 p-1 hover:underline' href='http://safe-for-pet.surge.sh/'>Live Link</a>
+                <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
+                    <h3 className='grid place-content-center text-xl'>Safe For Pet</h3>
+                    <p className='my-2 p-1'>Full stack application that lets a user ask the question, can my dog eat this?</p>
+                        <ul className='list-disc list-inside'>
+                            <li>Handles text input, voice input, or no input from users</li>
+                            <li>Communicates with custom REST API endpoints for data retrieval through Postgres</li>
+                            <li>Infographic section with pagination of current data, unique user visits, and voice logs</li>
+                        </ul>
+                    <a className='m-1 p-1 hover:bg-pink-200 rounded-full p-1' href='http://safe-for-pet.surge.sh/'>Live Link</a>
                 </div>
 
                 <div className='p-1'></div>
 
-                <div className='rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='inline-block align-middle'>NASA Hackathon</h3>
-                    <p className='my-2 p-1'>This website is designed to help you figure out how to respond to biased comments. 
-                       We hope it will be a starting point for reflection. Collaborative project with other developers.
-                       Tech: Javascript, Flask, Python, Bootstrap</p>
-                    <a className='my-2 p-1 hover:underline' href='https://better-together-tardigrades.herokuapp.com/'>Live Link</a>
+                <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
+                    <h3 className='grid place-content-center text-xl'>NASA Hackathon</h3>
+                    <p className='my-2 p-1'>Collaborative group hackathon project for NASA's Space App Hackathon</p>
+                    <ul className='list-disc list-inside'>
+                        <li>Collaborated with 3 other software engineers through zoom and slack, and git/github</li>
+                        <li>Allows the creation of scenarios through form submission, displayed with Jinja</li>
+                        <li>Persists data through the use of session data, avoiding user registration for faster use</li>
+                    </ul>
+                    <a className='m-1 p-1 hover:bg-pink-200 rounded-full p-1' href='https://better-together-tardigrades.herokuapp.com/'>Live Link</a>
                 </div>
 
                 <div className='p-1'></div>
 
-                <div className='rounded border-1 p-1 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='inline-block align-middle'>Interal inventory Tool</h3>
-                    <p className='my-2 p-1'>Helps me avoid coming in at 4am during perishable inventory.  Automates a highly manual task of counting individual items, 
-                    multiplying those items by a average weight, and entering them into a handheld device.  Automates this process with two buttons, and a 
-                    generated UPC barcode.  Saves me 1.5 hours.
-                       Tech: Javascript, TailwindCSS, React, HTML/CSS</p>
-                    <a className='my-2 p-1 hover:underline' href='https://plant-keeper.herokuapp.com/'>Live Link</a>
+                <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
+                    <h3 className='grid place-content-center text-xl'>Interal Inventory Tool</h3>
+                    <p className='my-2 p-1'>Inventory tool to automate manual counting, improve accuracy, and reduce work at my current employer</p>
+                    <ul className='list-disc list-inside'>
+                        <li>Creates customizable list of items based on a JSON object</li>
+                        <li>Displays total weight for a user to enter, based on current count</li>
+                        <li>Provides barcode to maximize scanning into store devices</li>
+                    </ul>
+                    <a className='m-1 p-1 hover:bg-pink-200 rounded-full p-1' 
+                        href='https://inventory-tool-21.surge.sh/'>Live Link</a>
                 </div>
 
                 <div className='p-1'></div>
 
-                <div className='grid place-content-center rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 my-1 text-2xl'>
+                <div className='grid place-content-center rounded border-1 p-2 shadow-md bg-blue-200 bg-opacity-25 text-2xl'>
                     <a href='https://www.github.com/LSanchez17'><h2>Github <span><img className='inline my-1 h-6 w-6' src='./github-sign.png'></img></span></h2></a>
                 </div>
             </div>
