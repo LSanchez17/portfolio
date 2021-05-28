@@ -1,9 +1,27 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import {motion} from 'framer-motion'
 
 const about = ({projects, contacts, reset}) => {
     return (
-        <div className={styles.container}>
+        <motion.div 
+            initial='hidden'
+            animate='visible'
+            variants={{
+                hidden:{
+                    scale:.125,
+                    opacity: 0
+                },
+                visible:{
+                    scale: 1,
+                    opacity: 1,
+                transition: {
+                    delay: .2,
+                    duration: .5
+                }
+            }
+            }}
+            className={styles.container}>
             <Head>
                 <title>Luis-Software Engineer</title>
                 <meta name="description" content="Luis, Software Engineer" />
@@ -68,8 +86,8 @@ const about = ({projects, contacts, reset}) => {
                   </div>
                 </div>  
             </div>
-            </main>
-        </div>
+          </main>
+        </motion.div>
     );
 };
 

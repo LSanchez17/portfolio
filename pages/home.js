@@ -1,9 +1,27 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import {motion} from 'framer-motion'
 
 const HomePage = ({projects, contacts, about}) => {
     return(
-        <div className={styles.container}>
+        <motion.div 
+            className={styles.container}
+            initial='hidden'
+            animate='visible'
+            variants={{
+                hidden:{
+                    scale:1,
+                    opacity: 0
+                },
+                visible:{
+                    scale: 1,
+                    opacity: 1,
+                    transition: {
+                        delay: .5
+                    }
+                }
+            }}
+        >
           <Head>
             <title>Luis-Software Engineer</title>
             <meta name="description" content="Luis, Software Engineer" />
@@ -14,7 +32,7 @@ const HomePage = ({projects, contacts, about}) => {
       
             <div className='p-48'>
                 <h3 className='text-4xl static'>
-                Welcome to my humble abode
+                Welcome!
                 </h3>
             </div>
       
@@ -59,7 +77,7 @@ const HomePage = ({projects, contacts, about}) => {
           <footer className={styles.footer}>
           <p>icons provided from <span>https://www.flaticon.com/</span></p>
           </footer>
-        </div>)
+        </motion.div>)
 }
 
 export default HomePage;

@@ -2,7 +2,7 @@
 import Projects from '../pages/projects'
 import Contact from '../pages/contact'
 import About from '../pages/about'
-import HomePage from '../pages/home';
+import HomePage from '../pages/home'
 import { useState } from 'react'
 
 // const Particles = dynamic(

@@ -1,22 +1,56 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import {motion} from 'framer-motion'
+import { useState } from 'react';
 
 const projects = ({about, contacts, reset}) => {
+    //repetitive, maybe single array?
+    const [isPlant, setIsPlant] = useState(false);
+    const [isPet, setIsPet] = useState(false);
+    const [isNasa, setIsNasa] = useState(false);
+    const [isInventory, setIsInventory] = useState(false);
+
     return (
-        <div className={styles.container}>
+        <motion.div 
+            initial='hidden'
+            animate='visible'
+            variants={{
+                hidden:{
+                    scale:.125,
+                    opacity: 0
+                },
+                visible:{
+                    scale: 1,
+                    opacity: 1,
+                transition: {
+                    delay: .2,
+                    duration: .5
+                }
+                }
+            }}
+            className={styles.container}>
             <Head>
                 <title>Luis-Software Engineer</title>
                 <meta name="description" content="Luis, Software Engineer" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
+            
             <main className={styles.main}>
 
             <div className='text-black rounded border-4 p-3 shadow-sm bg-indigo-100 bg-opacity-50'>
                 <h1 className='grid place-content-center align-middle pb-2 text-3xl'>Projects</h1>
+                <p className='grid place-content-center border-1 text-sm mb-3 shadow-sm '>Click to learn more!</p>
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='grid place-content-center text-xl'>Plant Keeper</h3>
+                    <h3 onClick={() => setIsPlant(isPlant => !isPlant)} 
+                        className='grid place-content-center 
+                                   text-xl hover:bg-blue-200 rounded p-2 shadow-md'>Plant Keeper</h3>
+                    {isPlant ?
+                    <motion.div 
+                        transition={{ delay: 0.4 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1}}
+                    >
                     <p className='my-2 p-2'>Full stack application that helps users keep track of when to water, trim, or repot their plants</p>
                     <ul className='list-disc list-inside'>
                         <li>Full user creation, login/logout, deletion, update features through API endpoints</li>
@@ -24,12 +58,23 @@ const projects = ({about, contacts, reset}) => {
                         <li>Handles reminders of when to take care of a user's plants through date objects and weather data from outside API</li>
                     </ul>
                     <a className='grid place-content-center m-1 p-1 hover:bg-pink-200 rounded-full p-1' href='https://plant-keeper.herokuapp.com/'>Live Link</a>
+                    </motion.div>
+                    : ''
+                    }
                 </div>
 
                 <div className='p-1'></div>
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='grid place-content-center text-xl'>Safe For Pet</h3>
+                    <h3 onClick={() => setIsPet(isPet => !isPet)} 
+                        className='grid place-content-center 
+                                   text-xl hover:bg-blue-200 rounded p-2 shadow-md'>Safe For Pet</h3>
+                    { isPet ?
+                    <motion.div
+                        transition={{ delay: 0.4 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1}}
+                    >
                     <p className='my-2 p-2'>Full stack application that lets a user ask the question, can my dog eat this?</p>
                         <ul className='list-disc list-inside'>
                             <li>Handles text input, voice input, or no input from users</li>
@@ -37,12 +82,23 @@ const projects = ({about, contacts, reset}) => {
                             <li>Infographic section with pagination of current data, unique user visits, and voice logs</li>
                         </ul>
                     <a className='grid place-content-center m-1 p-1 hover:bg-pink-200 rounded-full p-1' href='http://safe-for-pet.surge.sh/'>Live Link</a>
+                    </motion.div>
+                    : ''
+                    }
                 </div>
 
                 <div className='p-1'></div>
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='grid place-content-center text-xl'>NASA Hackathon</h3>
+                    <h3 onClick={() => setIsNasa(isNasa => !isNasa)} 
+                        className='grid place-content-center 
+                                   text-xl hover:bg-blue-200 rounded p-2 shadow-md'>NASA Hackathon</h3>
+                    {isNasa ?
+                    <motion.div
+                        transition={{ delay: 0.4 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1}}
+                    >
                     <p className='my-2 p-2'>Collaborative group hackathon project for NASA's Space App Hackathon</p>
                     <ul className='list-disc list-inside'>
                         <li>Collaborated with 3 other software engineers through zoom and slack, and git/github</li>
@@ -50,12 +106,23 @@ const projects = ({about, contacts, reset}) => {
                         <li>Persists data through the use of session data, avoiding user registration for faster use</li>
                     </ul>
                     <a className='grid place-content-center m-1 p-1 hover:bg-pink-200 rounded-full p-1' href='https://better-together-tardigrades.herokuapp.com/'>Live Link</a>
+                    </motion.div>
+                    : ''
+                    }
                 </div>
 
                 <div className='p-1'></div>
 
                 <div className='rounded border-1 p-3 shadow-md bg-blue-200 bg-opacity-25 my-1'>
-                    <h3 className='grid place-content-center text-xl'>Interal Inventory Tool</h3>
+                    <h3 onClick={() => setIsInventory(isInventory => !isInventory)} 
+                        className='grid place-content-center 
+                                   text-xl hover:bg-blue-200 rounded p-2 shadow-md'>Interal Inventory Tool</h3>
+                    {isInventory ? 
+                    <motion.div
+                        transition={{ delay: 0.4 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1}}
+                    >
                     <p className='my-2 p-2'>Inventory tool to automate manual counting, improve accuracy, and reduce work at my current employer</p>
                     <ul className='list-disc list-inside'>
                         <li>Creates customizable list of items based on a JSON object</li>
@@ -64,6 +131,9 @@ const projects = ({about, contacts, reset}) => {
                     </ul>
                     <a className='grid place-content-center m-1 p-1 hover:bg-pink-200 rounded-full p-1' 
                         href='https://inventory-tool-21.surge.sh/'>Live Link</a>
+                    </motion.div>
+                    :''
+                    }
                 </div>
 
                 <div className='p-1'></div>
@@ -109,8 +179,8 @@ const projects = ({about, contacts, reset}) => {
                   </div>
                 </div>  
             </div>
-        </main>
-        </div>
+          </main>
+        </motion.div>
     );
 };
 
