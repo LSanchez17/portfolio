@@ -34,9 +34,11 @@ const about = ({projects, contacts, reset}) => {
                 <h2 className='grid place-content-center p-4 inline-block align-middle pb-3 text-3xl'>About Me</h2>
                 <div className='rounded border-1 shadow-md bg-blue-200 bg-opacity-25 my-1 p-2'>
                     <p className='leading-loose text-2xl flex items-end pb-3'><img className='grayscale-0 w-64 h-64 rounded-full items-start pt-5 pr-3' src='./plantTopia.jpeg'></img>
-                    Software Engineer. Writing quality, tested, and scalable code. Experienced with modern frameworks, 
-                    tools, and libraries. I love creating solutions to problems, automating repetitive tasks to save time and resources, and improving the 
-                    lives of those around me with code is what I strive for. I improve my craft through educational opportunities, conferences/meet ups, 
+                    Software Engineer. I love creating solutions to problems, automating repetitive tasks to save time and resources, and improving the 
+                    lives of those around me with code is what I strive for.  Writing quality, tested, and scalable code. Experienced with modern frameworks, 
+                    tools, and libraries. Experienced with modern tools, and front end/back end development. I thrive in a fast-paced environment, 
+                    under guidance from motivated leaders. I am also an agile collaborator, with a focus on improving the user experience.
+                    I improve my craft through educational opportunities, conferences/meet ups, 
                     articles, and side projects.
                     </p>
                 </div>
