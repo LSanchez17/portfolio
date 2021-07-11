@@ -30,12 +30,12 @@ const HomePage = ({projects, contacts, about}) => {
       
           <main className={styles.main}>
       
-            <div className='p-48'>
-                <h3 className='text-4xl static'>
-                Welcome!
+            <div className='p-4'>
+                <h3 className='text-4xl static text-center'>
+                Welcome! I'm Luis, a Software Engineer! Take a look around, and get in touch!
                 </h3>
             </div>
-      
+            <div className='p-40 m-33'></div>
             <div className='grid grid-rows-1 grid-flow-col gap-3 justify-evenly'> 
                 <div className='border-3 m-1 p-8 shadow-2xl rounded-full h-48 w-48'>
                   <div className='pt-8 text-center'>

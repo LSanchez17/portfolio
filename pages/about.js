@@ -36,7 +36,7 @@ const about = ({projects, contacts, reset}) => {
                     <p className='leading-loose text-2xl flex items-end pb-3'><img className='grayscale-0 w-64 h-64 rounded-full items-start pt-5 pr-3' src='./plantTopia.jpeg'></img>
                     Software Engineer. Writing quality, tested, and scalable code. Experienced with modern frameworks, 
                     tools, and libraries. I love creating solutions to problems, automating repetitive tasks to save time and resources, and improving the 
-                    lives of those around me with code is what I strive for. I improve my craft through educational opportunities, conferences/meet ups, 
+                    lives of those around me with code. I improve my craft through educational opportunities, conferences/meet ups, 
                     articles, and side projects.
                     </p>
                 </div>
