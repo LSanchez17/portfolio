@@ -1,10 +1,9 @@
-import { CampFire } from './components/CampFire';
-import './index.css';
+import { SnowFall } from './components/SnowFall';
 
 function App() {
   return (
     <div className="App">
-      <CampFire />
+      <SnowFall />
     </div>
   );
 }

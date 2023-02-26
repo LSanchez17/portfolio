@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { DirectionEnum } from '../utils/enums';
+import { DirectionEnum, RegularKeyFramesEnum, 
+    SnowKeyFramesEnum, SnowTypesEnum } from '../utils/enums';
+import '../css/styles.css'
 
-export const CampFire = () => {
+export const SnowFall = () => {
     const [menuItems, setMenuItems] = useState('');
     const [snowFall, setSnowFall] = useState([]);
     const [snowballs, setSnowballs] = useState(0);
+
+    const possibleSnow = [SnowTypesEnum.Snow, SnowTypesEnum.SmallSnow, SnowTypesEnum.BigSnow];
 
     useEffect(() => {
         setTimeout((() => {
@@ -31,25 +35,28 @@ export const CampFire = () => {
         }
 
         const createSnow = setInterval(() => {
-            let direction = snowballs % 2 === 0 ? DirectionEnum.DropLeft : DirectionEnum.DropRight;
-            const duration = Math.floor(Math.random() * (15 - 9) + 9);
-            
-            const snowJsxDiv = (<div 
-                key={snowballs}
-                id={'snow'}
-                style={ {animation:
-                    `${direction} ${duration}s  linear infinite` }
-                }>
-            </div>)
+            let direction = snowballs % 2 === 0 ? SnowKeyFramesEnum.DropLeft : SnowKeyFramesEnum.DropRight;
+            const duration = Math.floor(Math.random() * (13 - 7) + 7);
+            const snowType = possibleSnow[Math.floor(Math.random() * possibleSnow.length)]
 
-            if ( snowFall.length > 5 ) {
-                const randomSnowToDelete = Math.floor(Math.random * snowFall.length-1);
-                setSnowFall(snowFall.splice(randomSnowToDelete, 1));
+            
+            const snowJsxDiv = (
+                <span 
+                    key={snowballs}
+                    id={snowType}
+                    style={ {animation:
+                        `${direction} ${duration}s  linear infinite` }
+                    }>
+                </span>)
+
+            if ( snowFall.length > 7 ) {
+                    setSnowFall(snowFall.unshift());
             }
 
             setSnowFall([...snowFall, snowJsxDiv]);
             increment();
-        }, 1500)
+        }, 2500)
+
         return () => {
             return clearInterval(createSnow);
         }
@@ -57,9 +64,11 @@ export const CampFire = () => {
 
     return (
         <div id='frame'>
-            {snowFall}
-            <div id='contentHolder'>   
-                {menuItems}
+            <div id='snowingFrame'>
+                <div id='contentHolder'>   
+                    {menuItems}
+                </div>
+                {snowFall}
             </div>
         </div>
     )

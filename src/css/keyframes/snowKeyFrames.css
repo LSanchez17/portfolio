@@ -1,0 +1,134 @@
+@keyframes dropLeft {
+    from {
+  transform: translateX(20rem);
+  transform: translateY(0);
+  opacity: 1;
+}
+25% {
+  transform: translateX(18rem);
+  transform: translatey(calc(100vh/2.2));
+  opacity: .75;
+}
+75% {
+  transform: translateX(22rem);
+  transform: translatey(calc(100vh/2.5));
+  opacity: .50;
+}
+to {
+  transform: translatey(calc(100vh/2.7));
+  opacity: 0;
+}
+}
+
+@keyframes dropLeft {
+    from {
+  transform: translateX(20rem);
+  transform: translateY(0);
+  opacity: 1;
+}
+25% {
+  transform: translateX(18rem);
+  transform: translatey(calc(100vh/2.2));
+  opacity: .75;
+}
+75% {
+  transform: translateX(22rem);
+  transform: translatey(calc(100vh/2.5));
+  opacity: .50;
+}
+to {
+  transform: translatey(calc(100vh/2.7));
+  top:100%;
+  opacity: 0;
+}
+}
+
+@keyframes dropLeft {
+    from {
+  transform: translateX(20rem);
+  transform: translateY(0);
+  opacity: 1;
+}
+25% {
+  transform: translateX(18rem);
+  transform: translatey(calc(100vh/2.2));
+  opacity: .75;
+}
+75% {
+  transform: translateX(22rem);
+  transform: translatey(calc(100vh/2.5));
+  opacity: .50;
+}
+to {
+  transform: translatey(calc(100vh/2.7));
+  top:100%;
+  opacity: 0;
+}
+}
+
+@keyframes dropLeft {
+    from {
+  transform: translateX(20rem);
+  transform: translateY(0);
+  opacity: 1;
+}
+25% {
+  transform: translateX(18rem);
+  transform: translatey(calc(100vh/2.2));
+  opacity: .75;
+}
+75% {
+  transform: translateX(22rem);
+  transform: translatey(calc(100vh/2.5));
+  opacity: .50;
+}
+to {
+  transform: translatey(calc(100vh/2.7));
+  top:100%;
+  opacity: 0;
+}
+}
+
+@keyframes dropLeft {
+    from {
+  transform: translateX(20rem);
+  transform: translateY(0);
+  opacity: 1;
+}
+25% {
+  transform: translateX(18rem);
+  transform: translatey(calc(100vh/2.2));
+  opacity: .75;
+}
+75% {
+  transform: translateX(22rem);
+  transform: translatey(calc(100vh/2.5));
+  opacity: .50;
+}
+to {
+  transform: translatey(calc(100vh/2.7));
+  top:100%;
+  opacity: 0;
+}
+}
+
+@keyframes dropRight {
+    from {
+  transform: translateX(-25rem);
+  opacity: 1;
+}
+25% {
+  transform: translateX(-23rem);
+  transform: translatey(calc(100vh/2.2));
+  opacity: .75;
+}
+75% {
+  transform: translateX(-25rem);
+  transform: translatey(calc(100vh/2.5));
+  opacity: .50;
+}
+to {
+  transform: translatey(calc(100vh/2.2));
+  opacity: 0;
+}
+}
