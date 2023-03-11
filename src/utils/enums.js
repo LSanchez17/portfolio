@@ -16,3 +16,11 @@ export const SnowTypesEnum = {
     SmallSnow: 'smallSnow',
     BigSnow: 'bigSnow'
 }
+
+export const AnimationStylePresets = {
+    NormalAnimation: 'animation',
+    WebKitAnimation: 'WebkitAnimation',
+    MozAnimation: 'MozAnimation',
+    OAnimation: 'OAnimation',
+    MsAnimation: 'MsAnimation'
+}

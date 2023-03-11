@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { DirectionEnum, RegularKeyFramesEnum, 
+import { RegularKeyFramesEnum, AnimationStylePresets,
     SnowKeyFramesEnum, SnowTypesEnum } from '../utils/enums';
 import '../css/styles.css'
 
@@ -9,11 +9,11 @@ export const SnowFall = () => {
     const [snowballs, setSnowballs] = useState(0);
 
     const possibleSnow = [SnowTypesEnum.Snow, SnowTypesEnum.SmallSnow, SnowTypesEnum.BigSnow];
-
+    
     useEffect(() => {
         setTimeout((() => {
             const jsxElements = (
-                <div id='menuFadeIn'>    
+                <div id={`menu${RegularKeyFramesEnum.FadeIn}`}>    
                     <div id='resume'>
                         <h1>Resume</h1>
                     </div>
@@ -29,25 +29,36 @@ export const SnowFall = () => {
             )
             setMenuItems(jsxElements)
         }), 3000)
+    }, [])
 
+
+    useEffect(() => {
         const increment = () => {
             setSnowballs(snowballs => snowballs += 1)
         }
 
+        // Look at increasing the dissapearance by one or two seconds or incresing duration of animation
         const createSnow = setInterval(() => {
-            let direction = snowballs % 2 === 0 ? SnowKeyFramesEnum.DropLeft : SnowKeyFramesEnum.DropRight;
-            const duration = Math.floor(Math.random() * (13 - 7) + 7);
+            // Improve randomValue and direction to be more reader friendly, typescript it up
+            const randomValue = ~~(Math.random() * ((Object.keys(SnowKeyFramesEnum).length) - 0) + 0);
+            const direction = SnowKeyFramesEnum[Object.keys(SnowKeyFramesEnum)[randomValue]];
+            const duration = ~~(Math.random() * (13 - 7) + 7);
             const snowType = possibleSnow[Math.floor(Math.random() * possibleSnow.length)]
-
+            const animationStyles = {
+                [AnimationStylePresets.NormalAnimation]: `${direction} ${duration}s linear infinite`,
+                [AnimationStylePresets.WebKitAnimation]: `${direction} ${duration}s linear infinite`,
+                [AnimationStylePresets.MozAnimation]: `${direction} ${duration}s linear infinite`,
+                [AnimationStylePresets.OAnimation]: `${direction} ${duration}s linear infinite`,
+                [AnimationStylePresets.MsAnimation]: `${direction} ${duration}s linear infinite`
+            }
             
             const snowJsxDiv = (
                 <span 
                     key={snowballs}
                     id={snowType}
-                    style={ {animation:
-                        `${direction} ${duration}s  linear infinite` }
-                    }>
-                </span>)
+                    style={animationStyles}>
+                </span>
+            )
 
             if ( snowFall.length > 7 ) {
                     setSnowFall(snowFall.unshift());
@@ -65,10 +76,12 @@ export const SnowFall = () => {
     return (
         <div id='frame'>
             <div id='snowingFrame'>
+                <div id='snowCollector'>
+                    {snowFall}
+                </div>
                 <div id='contentHolder'>   
                     {menuItems}
                 </div>
-                {snowFall}
             </div>
         </div>
     )
