@@ -1,18 +1,19 @@
 @media screen and (max-width: 600px )
 {
   body {
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    filter: drop-shadow(0 0 10px white);
+    font-family: bradley hand, cursive;
+    background: radial-gradient(ellipse at bottom, #465669 0%, #1d2131 100%);
+    filter: drop-shadow(0 0 10px rgb(168, 143, 143));
     overflow: hidden;
     height: 100vh;
   }
   
   #menufadeIn {
-    animation: fadeIn 9s;
-    -webkit-animation: fadeIn 9s;
-    -moz-animation: fadeIn 9s;
-    -o-animation: fadeIn 9s;
-    -ms-animation: fadeIn 9s;
+    animation: fadeIn 6s;
+    -webkit-animation: fadeIn 6s;
+    -moz-animation: fadeIn 6s;
+    -o-animation: fadeIn 6s;
+    -ms-animation: fadeIn 6s;
   }
 
   #contentHolder {
@@ -20,6 +21,30 @@
     margin-left: 33vw;
     grid-area: CH;
     z-index: 2;
+  }
+
+  #resumeresumeGlow > h1 {
+    animation: resumeGlow 6.5s infinite alternate;
+    -webkit-animation: resumeGlow 6.5s infinite alternate;
+    -moz-animation: resumeGlow 6.5s infinite alternate;
+    -o-animation: resumeGlow 6.5s infinite alternate;
+    -ms-animation: resumeGlow 6.5s infinite alternate;
+  }
+
+  #projectsprojectGlow > h1 {
+    animation: projectGlow 8.5s infinite alternate;
+    -webkit-animation: projectGlow 8.5s infinite alternate;
+    -moz-animation: projectGlow 8.5s infinite alternate;
+    -o-animation: projectGlow 8.5s infinite alternate;
+    -ms-animation: projectGlow 8.5s infinite alternate;
+  }
+
+  #contactcontactGlow > h1 {
+    animation: contactGlow 9.9s infinite alternate;
+    -webkit-animation: contactGlow 9.9s infinite alternate;
+    -moz-animation: contactGlow 9.9s infinite alternate;
+    -o-animation: contactGlow 9.9s infinite alternate;
+    -ms-animation: contactGlow 9.9s infinite alternate;
   }
 
   #snowingFrame {
@@ -74,8 +99,13 @@
   }
 
   #snowCollector {
-    border: 2px solid red;
     grid-area: SC;
     height: 100vh;
+  }
+
+  #modal {
+    border: 2px solid purple;
+    height: 250px;
+    width: auto;
   }
 }

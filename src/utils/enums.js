@@ -1,6 +1,9 @@
 export const RegularKeyFramesEnum = {
     FadeAway: 'fadeAway',
-    FadeIn: 'fadeIn'
+    FadeIn: 'fadeIn',
+    ResumeGlow: 'resumeGlow',
+    ProjectGlow: 'projectGlow',
+    ContactGlow: 'contactGlow'
 }
 
 export const SnowKeyFramesEnum = {
@@ -23,4 +26,8 @@ export const AnimationStylePresets = {
     MozAnimation: 'MozAnimation',
     OAnimation: 'OAnimation',
     MsAnimation: 'MsAnimation'
+}
+
+export const UserMessages = {
+    regularMessage: 'regularMessage'
 }
