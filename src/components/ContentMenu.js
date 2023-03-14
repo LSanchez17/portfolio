@@ -1,53 +1,72 @@
 import React, { useEffect, useState } from 'react';
-import { RegularKeyFramesEnum } from '../utils/enums';
+import { RegularKeyFramesEnum, MenuItems } from '../utils/enums';
+import { Resume } from './Resume';
+import { Projects } from './Projects';
+import { Contact } from './Contact';
 
-export const ContentMenu = ({visuals, canStart}) => {
-    const [content, setContent] = useState()
+export const ContentMenu = ({visuals}) => {
+    const [menuItems, setMenuItems] = useState()
+    const [selectedMenu, setSelectedMenu] = useState();
+    
+    const resetChoice = () => {
+        setSelectedMenu();
+    }
+
+    const subMenus = { 
+        [MenuItems.Resume]: <Resume reset={resetChoice} />,
+        [MenuItems.Projects]: <Projects reset={resetChoice} />,
+        [MenuItems.Contact]: <Contact reset={resetChoice} />
+    }
+
+    const changeMenu = (choice) => {
+        const ItemPicked = subMenus[choice]
+        setSelectedMenu(ItemPicked)
+    };
 
     useEffect(() => {
         if (visuals) {
             setTimeout((() => {
                 const jsxElements = (
-                    <div id={`menu${RegularKeyFramesEnum.ResumeGlow}`}>    
+                    <div id={`menu${RegularKeyFramesEnum.FadeIn}`}>    
                         <div id={`resume${RegularKeyFramesEnum.ResumeGlow}`}>
-                            <h1>Resume</h1>
+                            <h1 onClick={() => changeMenu(MenuItems.Resume)}>Resume</h1>
                         </div>
 
                         <div id={`projects${RegularKeyFramesEnum.ProjectGlow}`}>
-                            <h1>Projects</h1>
+                            <h1 onClick={() => changeMenu(MenuItems.Projects)}>Projects</h1>
                         </div>
                     
                         <div id={`contact${RegularKeyFramesEnum.ContactGlow}`}>
-                            <h1>Contact</h1>
+                            <h1 onClick={() => changeMenu(MenuItems.Contact)}>Contact</h1>
                         </div>
                     </div>    
                 )
-                setContent(jsxElements)
-            }), 3000)
+                setMenuItems(jsxElements)
+            }), 2000)
         }
         else {
             const jsxElements = (
                 <div id={`menu`}>    
                     <div id={`resume`}>
-                        <h1>Resume</h1>
+                        <h1 onClick={() => changeMenu(MenuItems.Resume)}>Resume</h1>
                     </div>
 
                     <div id={`projects`}>
-                        <h1>Projects</h1>
+                        <h1 onClick={() => changeMenu(MenuItems.Projects)}>Projects</h1>
                     </div>
                     
                     <div id={`contact`}>
-                        <h1>Contact</h1>
+                        <h1 onClick={() => changeMenu(MenuItems.Contact)}>Contact</h1>
                     </div>
                 </div>    
             )
-            setContent(jsxElements)
+            setMenuItems(jsxElements)
         }
     }, [visuals])
 
     return (
         <div id='contentHolder'>   
-            {canStart && content}
+            {!selectedMenu ? menuItems : selectedMenu}
         </div>
     )
 }

@@ -9,11 +9,12 @@
   }
   
   #menufadeIn {
-    animation: fadeIn 6s;
+    animation: fadeIn 5s;
     -webkit-animation: fadeIn 6s;
     -moz-animation: fadeIn 6s;
     -o-animation: fadeIn 6s;
     -ms-animation: fadeIn 6s;
+    margin-top: 250px;
   }
 
   #contentHolder {
@@ -103,9 +104,26 @@
     height: 100vh;
   }
 
+  #menu {
+    margin-top: 250px;
+  }
+
   #modal {
     border: 2px solid purple;
     height: 250px;
-    width: auto;
+    margin-top: 25vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding: 10px 10px;
+    border-radius: 12%;
+    background-color: #465669;
+  }
+
+  #modal > button {
+    border-radius: 15%;
+    padding: 5px 15px 5px 15px;
+    margin: 0 15px 0 15px;
+    background: rgb(154, 207, 250);
+    border: 1px solid #FFF;
   }
 }

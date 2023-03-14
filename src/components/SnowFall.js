@@ -18,10 +18,10 @@ export const SnowFall = () => {
     }
 
     useEffect(() => {
-        if (showVisualEffects && modalAnswered) {
+        if (modalAnswered) {
             setContent((
                 <>
-                    <ContentMenu visuals={showVisualEffects} canStart={modalAnswered}/>
+                    <ContentMenu visuals={showVisualEffects} />
                     <Snow visuals={showVisualEffects} canStart={modalAnswered}/>
                 </>
             ))
@@ -29,7 +29,6 @@ export const SnowFall = () => {
     }, [modalAnswered, showVisualEffects])
 
     // render the rest when the modal is answered, just show modal initially
-
     return (
         <div id='frame'>
             <div id='snowingFrame'>
@@ -37,9 +36,7 @@ export const SnowFall = () => {
                                       question={`would you like full visual effects?`} 
                                       answerModal={answerModal} 
                                       updateQuestionAnswer={updateVisualEffects}/>}
-                {modalAnswered && (
-                    content
-                )}
+                {modalAnswered && content }
             </div>
         </div>
     )

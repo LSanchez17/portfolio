@@ -31,3 +31,17 @@ export const AnimationStylePresets = {
 export const UserMessages = {
     regularMessage: 'regularMessage'
 }
+
+export const MenuItems = {
+    Resume: 'resume',
+    Projects: 'projects',
+    Contact: 'contact'
+}
+
+export const FormIds = {
+    Name: 'name',
+    Email: 'email',
+    Message: 'message',
+    Text: 'text',
+    Submit: 'submit',
+}

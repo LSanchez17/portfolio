@@ -9,7 +9,7 @@ export const Snow = ({visuals, canStart}) => {
     const possibleSnow = [SnowTypesEnum.Snow, SnowTypesEnum.SmallSnow, SnowTypesEnum.BigSnow];
     const message = (
         <h2 id={`${UserMessages.regularMessage}`}>
-            Please allow visuals to see the me!
+            Imagine snow falling in the background!
         </h2>
     )
 

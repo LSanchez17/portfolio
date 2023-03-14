@@ -2,7 +2,7 @@ import React from "react";
 
 export const Modal = ({question, answerModal, updateQuestionAnswer}) => {
     const answerQuestion = (answer) => {
-        answerModal(answer)
+        answerModal()
         updateQuestionAnswer(answer)
     }
 
