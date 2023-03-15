@@ -55,7 +55,7 @@
     gap: 20px 0px; 
     grid-template-areas: 
     "SC"
-    "."
+    "FP"
     "."  
     ;   
     justify-content: space-between; 
@@ -125,5 +125,44 @@
     margin: 0 15px 0 15px;
     background: rgb(154, 207, 250);
     border: 1px solid #FFF;
+  }
+
+  #firePit {
+    grid-area: FP;
+    border: 2px solid blue;
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    top: 80vh;
+    height: 155px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". LL RL"
+    ;
+  }
+
+  #leftLog {
+    background-color: chocolate;
+    grid-area: LL;
+    height: 20px;
+    width: 130px;
+    margin: auto;
+    border-radius: 20%;
+    transform: skew(190deg, 350deg);
+  }
+
+  #rightLog {
+    background-color: chocolate;
+    grid-area: LL;
+    height: 20px;
+    width: 130px;
+    margin: auto;
+    border-radius: 20%;
+    transform: skew(350deg, 190deg);
   }
 }

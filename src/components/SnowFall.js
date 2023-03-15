@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ContentMenu } from './ContentMenu';
 import { Snow } from './Snow';
 import { Modal } from './Modal';
+import { FirePit } from './FirePit';
 import '../css/styles.css'
 
 export const SnowFall = () => {
@@ -23,6 +24,7 @@ export const SnowFall = () => {
                 <>
                     <ContentMenu visuals={showVisualEffects} />
                     <Snow visuals={showVisualEffects} canStart={modalAnswered}/>
+                    <FirePit visuals={showVisualEffects} />
                 </>
             ))
         }

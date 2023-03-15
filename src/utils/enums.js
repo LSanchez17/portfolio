@@ -45,3 +45,12 @@ export const FormIds = {
     Text: 'text',
     Submit: 'submit',
 }
+
+export const FirePitItems = {
+    FirePit: 'firePit',
+    SmallFlame: 'smallFlame',
+    MediumFlame: 'mediumFlame',
+    BigFlame: 'bigFlame',
+    LeftLog: 'leftLog',
+    RightLog: 'rightLog'
+}
