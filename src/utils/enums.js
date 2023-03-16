@@ -52,5 +52,6 @@ export const FirePitItems = {
     MediumFlame: 'mediumFlame',
     BigFlame: 'bigFlame',
     LeftLog: 'leftLog',
-    RightLog: 'rightLog'
+    RightLog: 'rightLog',
+    FirePit: 'firePit'
 }

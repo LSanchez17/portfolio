@@ -8,7 +8,19 @@ export const FirePit = ({visuals}) => {
             <div id={FirePitItems.LeftLog}>
 
             </div>
+            
             <div id={FirePitItems.RightLog}>
+
+            </div>
+
+            {/* <div id={FirePitItems.SmallFlame}>
+
+            </div> */}
+            <div id={FirePitItems.MediumFlame}>
+
+            </div>
+
+            <div id={FirePitItems.BigFlame}>
 
             </div>
         </div>

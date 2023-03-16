@@ -141,7 +141,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
     ". . ."
-    ". . ."
+    ". BF MF"
     ". LL RL"
     ;
   }
@@ -165,4 +165,39 @@
     border-radius: 20%;
     transform: skew(350deg, 190deg);
   }
+
+  #smallFlame {
+    border: 2px solid red;
+    grid-area: SF;
+  }
+
+  #mediumFlame {
+    grid-area: MF;
+    animation: bigFlame 5s infinite alternate;
+    -webkit-animation: bigFlame 5s infinite alternate;
+    -moz-animation: bigFlame 5s infinite alternate;
+    -o-animation: bigFlame 5s infinite alternate;
+    -ms-animation: bigFlame 5s infinite alternate;
+    background-color: rgb(255, 221, 0);
+    position: relative;
+    right: 140px;
+    height: 45px;
+    width: 80px;
+    transform: skew(60deg, 160deg);
+  }
+
+  #bigFlame {
+    animation: bigFlame 5s infinite alternate;
+    -webkit-animation: bigFlame 5s infinite alternate;
+    -moz-animation: bigFlame 5s infinite alternate;
+    -o-animation: bigFlame 5s infinite alternate;
+    -ms-animation: bigFlame 5s infinite alternate;
+    background-color: red;
+    height: 35px;
+    width: 70px;
+    transform: skew(60deg, 160deg);
+    grid-area: BF;
+  }
+
+
 }
