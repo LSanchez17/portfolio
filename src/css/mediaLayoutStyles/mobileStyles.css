@@ -129,7 +129,6 @@
 
   #firePit {
     grid-area: FP;
-    border: 2px solid blue;
     position: absolute;
     z-index: 2;
     margin: auto;
@@ -141,62 +140,96 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
     ". . ."
-    ". BF MF"
+    "SF BF MF"
     ". LL RL"
     ;
   }
 
   #leftLog {
-    background-color: chocolate;
+    background-color: #523A28;
     grid-area: LL;
     height: 20px;
     width: 130px;
     margin: auto;
     border-radius: 20%;
     transform: skew(190deg, 350deg);
+    border: 1px solid #000;
   }
 
   #rightLog {
-    background-color: chocolate;
+    background-color: #523A28;
     grid-area: LL;
     height: 20px;
     width: 130px;
     margin: auto;
     border-radius: 20%;
     transform: skew(350deg, 190deg);
+    border: 1px solid #000;
   }
 
-  #smallFlame {
-    border: 2px solid red;
+  #smallFlameShootUpward {
     grid-area: SF;
+    position: relative;
+    top: 40px;
+    right: 140px;
+    z-index: -1;
+    animation: smallFlameShootUpward 1s linear infinite;
+    -webkit-animation: smallFlameShootUpward 1s linear infinite;
+    -moz-animation: smallFlameShootUpward 1s linear infinite;
+    -o-animation: smallFlameShootUpward 1s linear infinite;
+    -ms-animation: smallFlameShootUpward 1s linear infinite;
+  }
+
+  #smallFlameShootLeft {
+    grid-area: SF;
+    position: relative;
+    top: 60px;
+    right: 140px;
+    z-index: -1;
+    animation: smallFlameShootLeft 2.5s linear infinite;
+    -webkit-animation: smallFlameShootLeft 2.5s linear infinite;
+    -moz-animation: smallFlameShootLeft 2.5s linear infinite;
+    -o-animation: smallFlameShootLeft 2.5s linear infinite;
+    -ms-animation: smallFlameShootLeft 2.5s linear infinite;
+  }
+
+  #smallFlameShootRight {
+    grid-area: SF;
+    position: relative;
+    top: 65px;
+    right: 100px;
+    z-index: -1;
+    animation: smallFlameShootRight 3.5s linear infinite;
+    -webkit-animation: smallFlameShootRight 3.5s linear infinite;
+    -moz-animation: smallFlameShootRight 3.5s linear infinite;
+    -o-animation: smallFlameShootRight 3.5s linear infinite;
+    -ms-animation: smallFlameShootRight 3.5s linear infinite;
   }
 
   #mediumFlame {
     grid-area: MF;
-    animation: bigFlame 5s infinite alternate;
-    -webkit-animation: bigFlame 5s infinite alternate;
-    -moz-animation: bigFlame 5s infinite alternate;
-    -o-animation: bigFlame 5s infinite alternate;
-    -ms-animation: bigFlame 5s infinite alternate;
-    background-color: rgb(255, 221, 0);
+    animation: mediumFlame 5s infinite alternate;
+    -webkit-animation: mediumFlame 5s infinite alternate;
+    -moz-animation: mediumFlame 5s infinite alternate;
+    -o-animation: mediumFlame 5s infinite alternate;
+    -ms-animation: mediumFlame 5s infinite alternate;
     position: relative;
-    right: 140px;
-    height: 45px;
-    width: 80px;
-    transform: skew(60deg, 160deg);
+    top: 50px;
+    opacity: .65;
   }
 
   #bigFlame {
-    animation: bigFlame 5s infinite alternate;
-    -webkit-animation: bigFlame 5s infinite alternate;
-    -moz-animation: bigFlame 5s infinite alternate;
-    -o-animation: bigFlame 5s infinite alternate;
-    -ms-animation: bigFlame 5s infinite alternate;
-    background-color: red;
-    height: 35px;
-    width: 70px;
-    transform: skew(60deg, 160deg);
     grid-area: BF;
+    animation: bigFlame 6s infinite alternate;
+    -webkit-animation: bigFlame 6s infinite alternate;
+    -moz-animation: bigFlame 6s infinite alternate;
+    -o-animation: bigFlame 6s infinite alternate;
+    -ms-animation: bigFlame 6s infinite alternate;    
+    position: relative;
+    top: 50px;
+    left: 125px;
+    z-index: 0;
+    opacity: .75;
   }
 
 

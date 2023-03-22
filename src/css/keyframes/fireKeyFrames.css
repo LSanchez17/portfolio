@@ -1,17 +1,128 @@
 @keyframes bigFlame {
     0%, 15%, 27%, 33%, 35%, 50%, 53%, 55%, 64%, 66%, 77%, 100% {
-        transform: matrix(0.1, 1, -0.3, 2, 0, 0);;
+        transform: scale(.8, 1.5);
     }
     5%, 7%, 20%, 25%, 30%, 40%, 45%, 60% {
-        transform: matrix(-0.1, -1, -0.3, 1, 0, 0);;
+        transform: scale(1, 1.75);
     }
 }
 
 @keyframes mediumFlame {
     0%, 15%, 27%, 33%, 35%, 50%, 53%, 55%, 64%, 66%, 77%, 100% {
-        transform: matrix(0.1, -1, -0.3, 2, 0, 0);;
+        transform: scale(.8, 1.5);
     }
     5%, 7%, 20%, 25%, 30%, 40%, 45%, 60% {
-        transform: matrix(-0.1, -1, -0.3, -1, 0, 0);;
+        transform: scale(.8, 1.5);
+    }
+}
+
+@keyframes smallFlameShootLeft {
+    ffrom {
+        translate: 0vw 0vh;
+        opacity: .75;
+    }
+
+    10% {
+        translate: -1vw -1vh;
+        opacity: .65;
+    }
+
+    20% {
+        translate: -2vw -2vh;
+        opacity: .50;
+    }
+
+    40% {
+        translate: -3vw -4vh;
+        opacity: .35;
+    }
+
+    60% {
+        translate: -2vw -6vh;
+        opacity: .25;
+    }
+
+    80% {
+        translate: -1vw -8vh;
+        opacity: .125;
+    }
+
+    to {
+        translate: -1vw -11vh;
+        opacity: 0;
+    }
+}
+
+@keyframes smallFlameShootRight {
+    from {
+        translate: 0vw 0vh;
+        opacity: .75;
+    }
+
+    10% {
+        translate: 1vw -1vh;
+        opacity: .65;
+    }
+
+    20% {
+        translate: 2vw -2vh;
+        opacity: .50;
+    }
+
+    40% {
+        translate: 3vw -4vh;
+        opacity: .35;
+    }
+
+    60% {
+        translate: 2vw -6vh;
+        opacity: .25;
+    }
+
+    80% {
+        translate: 1vw -8vh;
+        opacity: .125;
+    }
+
+    to {
+        translate: -1vw -11vh;
+        opacity: 0;
+    }
+}
+
+@keyframes smallFlameShootUpward {
+    from {
+        translate: 0vw 0vh;
+        opacity: .75;
+    }
+
+    10% {
+        translate: 1vw -1vh;
+        opacity: .65;
+    }
+
+    20% {
+        translate: 2vw -2vh;
+        opacity: .50;
+    }
+
+    40% {
+        translate: 1vw -3vh;
+        opacity: .35;
+    }
+
+    60% {
+        translate: 2vw -4vh;
+        opacity: .25;
+    }
+
+    80% {
+        translate: 1vw -5vh;
+        opacity: .125;
+    }
+
+    to {
+        translate: 2vw -6vh;
+        opacity: 0;
     }
 }

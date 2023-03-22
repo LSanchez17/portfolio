@@ -48,7 +48,9 @@ export const FormIds = {
 
 export const FirePitItems = {
     FirePit: 'firePit',
-    SmallFlame: 'smallFlame',
+    SmallFlameShootLeft: 'smallFlameShootLeft',
+    SmallFlameShoottRight: 'smallFlameShootRight',
+    SmallFlameShootUpward: 'smallFlameShootUpward',
     MediumFlame: 'mediumFlame',
     BigFlame: 'bigFlame',
     LeftLog: 'leftLog',
