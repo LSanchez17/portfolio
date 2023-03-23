@@ -1,10 +1,15 @@
 import React from 'react'
-import { FirePitItems } from '../utils/enums'
-import orangeFlame from '../assets/svgs/smallOrangeFire.svg'
+import { FirePitItems, UserMessages } from '../utils/enums'
 
 export const FirePit = ({ visuals }) => {
 
-    return (
+    const message = (
+        <h2 id={`${UserMessages.regularMessage}`}>
+            Imagine a fire in the foreground!
+        </h2>
+    )
+
+    const campFire = (
         <div id={FirePitItems.FirePit}>
             <div id={FirePitItems.LeftLog}>
 
@@ -15,7 +20,7 @@ export const FirePit = ({ visuals }) => {
             </div>
 
             <div>
-                <svg id={FirePitItems.BigFlame} width="100px" height="70px" viewBox="0 0 30 42">
+                <svg id={FirePitItems.BigFlame} width="110px" height="90px" viewBox="0 0 30 42">
                     <path fill="red" stroke="##FFBF00" strokeWidth="1.5"
                         d="M15 3 Q16.5 6.8 25 18
        A12.8 12.8 0 1 1 5 18
@@ -24,7 +29,7 @@ export const FirePit = ({ visuals }) => {
             </div>
             
             <div>
-                <svg id={FirePitItems.MediumFlame} width="100px" height="70px" viewBox="0 0 30 42">
+                <svg id={FirePitItems.MediumFlame} width="100px" height="80px" viewBox="0 0 30 42">
                     <path fill="orange" stroke="##FFBF00" strokeWidth="1.5"
                         d="M15 3 Q16.5 6.8 25 18
        A12.8 12.8 0 1 1 5 18
@@ -44,5 +49,13 @@ export const FirePit = ({ visuals }) => {
                 </svg>
             </div>
         </div>
+    )
+
+    const visualRendering = visuals ? (campFire) : (message);
+
+    return (
+        <>
+            {visualRendering}
+        </>
     )
 }

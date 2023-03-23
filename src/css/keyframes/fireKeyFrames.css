@@ -1,18 +1,42 @@
 @keyframes bigFlame {
-    0%, 15%, 27%, 33%, 35%, 50%, 53%, 55%, 64%, 66%, 77%, 100% {
-        transform: scale(.8, 1.5);
+    from {
+        transform: matrix(1.05, 0.00, 0.05, 1.00, 0, 0);
     }
-    5%, 7%, 20%, 25%, 30%, 40%, 45%, 60% {
-        transform: scale(1, 1.75);
+    20% {
+        transform: matrix(1.12, 0.00, -0.05, 1.05, 0, 0);          
+    }
+    40% {
+        transform: matrix(1.07, 0.00, 0.05, 1.10, 0, 0);    
+    }
+    60% {
+        transform: matrix(1.12, 0.00, -0.05, 1.05, 0, 0);    
+    }
+    80% {
+        transform: matrix(1.07, 0.00, 0.05, 1.10, 0, 0);    
+    }
+    to {
+        transform: matrix(1.12, 0.00, -0.05, 1.05, 0, 0);    
     }
 }
 
 @keyframes mediumFlame {
-    0%, 15%, 27%, 33%, 35%, 50%, 53%, 55%, 64%, 66%, 77%, 100% {
-        transform: scale(.8, 1.5);
+    from {
+        transform: matrix(1.00, 0.00, 0.05, 1.00, 0, 0);
     }
-    5%, 7%, 20%, 25%, 30%, 40%, 45%, 60% {
-        transform: scale(.8, 1.5);
+    20% {
+        transform: matrix(1.05, 0.00, -0.05, 1.05, 0, 0);          
+    }
+    40% {
+        transform: matrix(1.10, 0.00, 0.05, 1.10, 0, 0);    
+    }
+    60% {
+        transform: matrix(1.05, 0.00, -0.05, 1.05, 0, 0);    
+    }
+    80% {
+        transform: matrix(1.10, 0.00, 0.05, 1.10, 0, 0);    
+    }
+    to {
+        transform: matrix(1.05, 0.00, -0.05, 1.05, 0, 0);    
     }
 }
 
