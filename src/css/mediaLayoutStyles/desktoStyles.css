@@ -1,15 +1,239 @@
-@media screen and (min-width: 1200px )
-{
+@media screen and (min-width: 1200px) {
   body {
-    background-color: #000;
+    font-family: bradley hand, cursive;
+    background: radial-gradient(ellipse at bottom, #465669 0%, #1d2131 100%);
+    filter: drop-shadow(0 0 10px rgb(168, 143, 143));
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  #menufadeIn {
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 6s;
+    -moz-animation: fadeIn 6s;
+    -o-animation: fadeIn 6s;
+    -ms-animation: fadeIn 6s;
+    margin-top: 250px;
+  }
+
+  #contentHolder {
+    position: absolute;
+    margin-left: 45vw;
+    grid-area: CH;
+    z-index: 2;
+  }
+
+  #resumeresumeGlow>h1 {
+    animation: resumeGlow 6.5s infinite alternate;
+    -webkit-animation: resumeGlow 6.5s infinite alternate;
+    -moz-animation: resumeGlow 6.5s infinite alternate;
+    -o-animation: resumeGlow 6.5s infinite alternate;
+    -ms-animation: resumeGlow 6.5s infinite alternate;
+  }
+
+  #projectsprojectGlow>h1 {
+    animation: projectGlow 8.5s infinite alternate;
+    -webkit-animation: projectGlow 8.5s infinite alternate;
+    -moz-animation: projectGlow 8.5s infinite alternate;
+    -o-animation: projectGlow 8.5s infinite alternate;
+    -ms-animation: projectGlow 8.5s infinite alternate;
+  }
+
+  #contactcontactGlow>h1 {
+    animation: contactGlow 9.9s infinite alternate;
+    -webkit-animation: contactGlow 9.9s infinite alternate;
+    -moz-animation: contactGlow 9.9s infinite alternate;
+    -o-animation: contactGlow 9.9s infinite alternate;
+    -ms-animation: contactGlow 9.9s infinite alternate;
+  }
+
+  #snowingFrame {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 0px;
+    grid-template-areas:
+      "SC"
+      "FP"
+      "."
+    ;
+    justify-content: space-between;
   }
 
   #frame {
     width: 100%;
-    height: 99vh;
+    height: 100vh;
     border: 1px solid #FFF;
     color: #fff;
-    display: grid;
     text-align: center;
+  }
+
+  #snow {
+    background-color: #FFF;
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+    display: inline-block;
+    position: relative;
+  }
+
+  #smallSnow {
+    background-color: #FFF;
+    border-radius: 100%;
+    height: 5px;
+    width: 5px;
+    z-index: -1;
+    display: inline-block;
+    position: relative;
+  }
+
+  #bigSnow {
+    background-color: #FFF;
+    border-radius: 100%;
+    height: 14px;
+    width: 14px;
+    z-index: -1;
+    display: inline-block;
+    position: relative;
+  }
+
+  #snowCollector {
+    grid-area: SC;
+    height: 100vh;
+  }
+
+  #menu {
+    margin-top: 250px;
+  }
+
+  #modal {
+    border: 2px solid purple;
+    height: 250px;
+    margin-top: 25vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding: 10px 10px;
+    border-radius: 12%;
+    background-color: #465669;
+  }
+
+  #modal>button {
+    border-radius: 15%;
+    padding: 5px 15px 5px 15px;
+    margin: 0 15px 0 15px;
+    background: rgb(154, 207, 250);
+    border: 1px solid #FFF;
+  }
+
+  #firePit {
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+    grid-area: FP;
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    top: 77vh;
+    height: 155px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      ". . ."
+      "SF BF MF"
+      ". LL RL"
+    ;
+  }
+
+  #leftLog {
+    background-color: #523A28;
+    grid-area: LL;
+    height: 20px;
+    width: 130px;
+    margin: auto;
+    border-radius: 20%;
+    transform: skew(190deg, 350deg);
+    border: 1px solid #000;
+  }
+
+  #rightLog {
+    background-color: #523A28;
+    grid-area: LL;
+    height: 20px;
+    width: 130px;
+    margin: auto;
+    border-radius: 20%;
+    transform: skew(350deg, 190deg);
+    border: 1px solid #000;
+  }
+
+  #smallFlameShootUpward {
+    grid-area: SF;
+    position: relative;
+    top: 40px;
+    right: 515px;
+    z-index: -1;
+    animation: smallFlameShootUpward 1s linear infinite;
+    -webkit-animation: smallFlameShootUpward 1s linear infinite;
+    -moz-animation: smallFlameShootUpward 1s linear infinite;
+    -o-animation: smallFlameShootUpward 1s linear infinite;
+    -ms-animation: smallFlameShootUpward 1s linear infinite;
+  }
+
+  #smallFlameShootLeft {
+    grid-area: SF;
+    position: relative;
+    top: 60px;
+    right: 510px;
+    z-index: -1;
+    animation: smallFlameShootLeft 2.5s linear infinite;
+    -webkit-animation: smallFlameShootLeft 2.5s linear infinite;
+    -moz-animation: smallFlameShootLeft 2.5s linear infinite;
+    -o-animation: smallFlameShootLeft 2.5s linear infinite;
+    -ms-animation: smallFlameShootLeft 2.5s linear infinite;
+  }
+
+  #smallFlameShootRight {
+    grid-area: SF;
+    position: relative;
+    top: 65px;
+    right: 500px;
+    z-index: -1;
+    animation: smallFlameShootRight 3.5s linear infinite;
+    -webkit-animation: smallFlameShootRight 3.5s linear infinite;
+    -moz-animation: smallFlameShootRight 3.5s linear infinite;
+    -o-animation: smallFlameShootRight 3.5s linear infinite;
+    -ms-animation: smallFlameShootRight 3.5s linear infinite;
+  }
+
+  #mediumFlame {
+    grid-area: MF;
+    animation: mediumFlame 700ms infinite alternate;
+    -webkit-animation: mediumFlame 700ms infinite alternate;
+    -moz-animation: mediumFlame 700ms infinite alternate;
+    -o-animation: mediumFlame 700ms infinite alternate;
+    -ms-animation: mediumFlame 700ms infinite alternate;
+    position: relative;
+    top: 57px;
+    left: 4px;
+    opacity: .65;
+  }
+
+  #bigFlame {
+    grid-area: BF;
+    animation: bigFlame 6s infinite alternate;
+    -webkit-animation: bigFlame 6s infinite alternate;
+    -moz-animation: bigFlame 6s infinite alternate;
+    -o-animation: bigFlame 6s infinite alternate;
+    -ms-animation: bigFlame 6s infinite alternate;
+    position: relative;
+    top: 50px;
+    left: 502px;
+    z-index: 0.5;
+    opacity: .75;
   }
 }
