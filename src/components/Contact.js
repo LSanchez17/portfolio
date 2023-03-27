@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MenuItems, FormIds } from '../utils/enums'
+import { ContactFormIds, FormIds } from '../utils/enums'
 
 export const Contact = ({reset}) => {
     const [formState, setFormState] = useState({})
@@ -15,14 +15,14 @@ export const Contact = ({reset}) => {
     }
 
     return(
-        <div id={MenuItems.Contact}>
-            <form onSubmit={submitInfo}>
-                <label id={FormIds.Name} htmlFor={FormIds.Name} >Name: </label>
+        <div id={ContactFormIds.ContactFormContainer}>
+            <form onSubmit={submitInfo} id={ContactFormIds.ContactForm}>
+                <label id={FormIds.Name} htmlFor={FormIds.Name} >{`${FormIds.Name}: `}</label>
                 <input type={FormIds.Text} onChange={handleInput} />
-                <label id={FormIds.Email} htmlFor={FormIds.Email} >Email: </label>
+                <label id={FormIds.Email} htmlFor={FormIds.Email} >{`${FormIds.Email}: `}</label>
                 <input type={FormIds.Email} onChange={handleInput} />
-                <label id={FormIds.Message} htmlFor={FormIds.Message} >Message: </label>
-                <textarea onChange={handleInput} />
+                <label id={FormIds.Message} htmlFor={FormIds.Message} >{`${FormIds.Message}: `}</label>
+                <textarea onChange={handleInput} htmlFor={FormIds.Message} />
                 <button type={FormIds.Submit}>Submit</button>
             </form>
 

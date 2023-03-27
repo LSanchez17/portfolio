@@ -238,5 +238,123 @@
     opacity: .75;
   }
 
+  #contentHolder #contactFormContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    position: relative;
+    right: 9vw;
+    width: 100%;
+    margin: auto;
+    top: 30vh;
+    padding: 10% 10%;
+  }
 
+  #contactForm {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6%;
+    background-color: whitesmoke;
+    opacity: .5;
+    padding: 10% 10%;
+    align-items: start;
+  }
+
+  #contactForm input {
+    border-radius: 9%;
+  }
+  
+  #contactForm textArea {
+    height: 100px;
+    padding: 2px 0px;
+    margin: 2px 2px 2px 0px;
+    border-radius: 9%;
+  }
+
+  #contactForm label {
+    color: #000;
+    padding: 2px 0px;
+    margin: 2px 0px;
+  }
+
+  #contentHolder #contactFormContainer button {
+    padding: 3% 3%;
+    margin: 5% 5%;
+    border-radius: 15%;
+    width: 80px;
+    height: 30px;
+  }
+
+  #contentHolder #resumeContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 25px;
+    border-radius: 10%;
+    background-color: whitesmoke;
+    opacity: .5;
+    padding: 10% 10%;
+    position: relative;
+    top: 30vh;
+    justify-items: center;
+  }
+
+  #contentHolder #resumeContainer a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  
+  #contentHolder #resumeContainer a:hover {
+    color: aquamarine;
+    text-decoration: none;
+  }
+
+  #contentHolder #resumeContainer button {
+    padding: 3% 3%;
+    margin: 5% 5%;
+    border-radius: 15%;
+    width: 80px;
+    height: 30px;
+  }
+
+  #contentHolder #projectContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 25px;
+    border-radius: 10%;
+    background-color: whitesmoke;
+    opacity: .5;
+    padding: 10% 10%;
+    position: relative;
+    top: 30vh;
+    justify-items: center;
+    align-items: end;
+    width: 250px;
+    right: 23vw;
+  }
+
+  #contentHolder #projectContainer ul {
+    display: flex;
+    flex-direction: column;
+    justify-self: baseline;
+    list-style-type: none;
+    color: #000;
+    padding: 0px;
+  }
+
+  #contentHolder #projectContainer ul li {
+    width: 200px;
+    padding: 2% 5% 2% 5%;
+    margin: 2% 5% 2% 5%;
+  }
+
+  #contentHolder #projectContainer button {
+    padding: 3% 3%;
+    margin: 5% 5%;
+    border-radius: 15%;
+    width: 80px;
+    height: 30px;  }
 }

@@ -1,14 +1,13 @@
 import React from 'react'
-import { MenuItems } from '../utils/enums'
+import { ProjectContainer } from '../utils/enums'
 
 export const Projects = ({reset}) => {
 
     return(
-        <div id={MenuItems.Projects}>
+        <div id={ProjectContainer.ProjectContainer}>
             <ul>
-                <li>Project #1</li>
-                <li>Project #2</li>
-                <li>Project #3</li>
+                <li>Darbe</li>
+                <li>Animarius</li>
             </ul>
             
             <button onClick={() => reset()}>Go Back</button>

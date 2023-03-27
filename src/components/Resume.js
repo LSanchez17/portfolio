@@ -1,12 +1,11 @@
 import React from 'react'
-import { MenuItems } from '../utils/enums'
+import { ResumeContainer } from '../utils/enums'
 
 export const Resume = ({reset}) => {
 
     return(
-        <div id={MenuItems.Resume}>
-            <h2>Resume</h2>
-
+        <div id={ResumeContainer.ResumeContainer}>
+            <a href='LuisSanchezResume2023.pdf'>Resume Download</a>
             <button onClick={() => reset()}>Go Back</button>
         </div>
     )

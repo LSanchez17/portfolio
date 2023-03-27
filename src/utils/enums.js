@@ -57,3 +57,17 @@ export const FirePitItems = {
     RightLog: 'rightLog',
     FirePit: 'firePit'
 }
+
+export const ContactFormIds = {
+    ContactFormContainer: 'contactFormContainer',
+    ContactForm: 'contactForm',
+}
+
+export const ResumeContainer = {
+    ResumeContainer: 'resumeContainer',
+}
+
+export const ProjectContainer = {
+    ProjectContainer: 'projectContainer',
+    Projects: 'projects',
+}
