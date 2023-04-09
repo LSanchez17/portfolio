@@ -38,6 +38,11 @@ export const MenuItems = {
     Contact: 'contact'
 }
 
+export const Socials = {
+    LinkedIn: 'LinkedIn',
+    LinkedInUri: 'https://linkedin.com/in/lasj'
+}
+
 export const FormIds = {
     Name: 'name',
     Email: 'email',
@@ -58,9 +63,9 @@ export const FirePitItems = {
     FirePit: 'firePit'
 }
 
-export const ContactFormIds = {
-    ContactFormContainer: 'contactFormContainer',
-    ContactForm: 'contactForm',
+export const ContactSection = {
+    ContactSectionContainer: 'contactSectionContainer',
+    ContactSection: 'contactSection',
 }
 
 export const ResumeContainer = {

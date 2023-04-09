@@ -4,40 +4,60 @@ import { Resume } from './Resume';
 import { Projects } from './Projects';
 import { Contact } from './Contact';
 
+const DEFAULT_CONTACT = (<h1>Contact</h1>);
+const DEFAULT_PROJECTS = (<h1>Projects</h1>);
+const DEFAULT_RESUME = (<h1>Resume</h1>);
+
 export const ContentMenu = ({visuals}) => {
     const [menuItems, setMenuItems] = useState()
-    const [selectedMenu, setSelectedMenu] = useState();
+    const [contact, setContact] = useState('');
+    const [projects, setProjects] = useState('');
+    const [resume, setResume] = useState('');
+    const [choice, setChoice] = useState();
+
+    const resetChoice = (itemToReset) => {
+        if (itemToReset === MenuItems.Contact) {
+            setContact(DEFAULT_CONTACT);
+        }
+        if (itemToReset === MenuItems.Projects) {
+            setProjects(DEFAULT_PROJECTS);
+        }
+        if (itemToReset === MenuItems.Resume) {
+            setResume(DEFAULT_RESUME);
+        }
+    }
     
-    const resetChoice = () => {
-        setSelectedMenu();
-    }
+    const ContactComponent = (<Contact reset={resetChoice} />);
+    const ProjectsComponent = (<Projects reset={resetChoice} />);
+    const ResumeComponent = (<Resume reset={resetChoice} />);
 
-    const subMenus = { 
-        [MenuItems.Resume]: <Resume reset={resetChoice} />,
-        [MenuItems.Projects]: <Projects reset={resetChoice} />,
-        [MenuItems.Contact]: <Contact reset={resetChoice} />
-    }
-
-    const changeMenu = (choice) => {
-        const ItemPicked = subMenus[choice]
-        setSelectedMenu(ItemPicked)
-    };
+    useEffect(() => {
+            if (MenuItems.Contact === choice) {
+                setContact(ContactComponent);
+            }
+            if (MenuItems.Projects === choice) {
+                setProjects(ProjectsComponent);
+            }
+            if (MenuItems.Resume === choice) {
+                setResume(ResumeComponent);
+            }
+    }, [choice])
 
     useEffect(() => {
         if (visuals) {
             setTimeout((() => {
                 const jsxElements = (
                     <div id={`menu${RegularKeyFramesEnum.FadeIn}`}>    
-                        <div id={`resume${RegularKeyFramesEnum.ResumeGlow}`}>
-                            <h1 onClick={() => changeMenu(MenuItems.Resume)}>Resume</h1>
+                        <div id={`resume${RegularKeyFramesEnum.ResumeGlow}`} onClick={() => setChoice(MenuItems.Resume)}>
+                            {resume ? resume : DEFAULT_RESUME}
                         </div>
 
-                        <div id={`projects${RegularKeyFramesEnum.ProjectGlow}`}>
-                            <h1 onClick={() => changeMenu(MenuItems.Projects)}>Projects</h1>
+                        <div id={`projects${RegularKeyFramesEnum.ProjectGlow}`} onClick={() => setChoice(MenuItems.Projects)}>
+                            {projects ? projects : DEFAULT_PROJECTS}
                         </div>
                     
-                        <div id={`contact${RegularKeyFramesEnum.ContactGlow}`}>
-                            <h1 onClick={() => changeMenu(MenuItems.Contact)}>Contact</h1>
+                        <div id={`contact${RegularKeyFramesEnum.ContactGlow}`} onClick={() => setChoice(MenuItems.Contact)}>
+                            {contact ? contact : DEFAULT_CONTACT}
                         </div>
                     </div>    
                 )
@@ -47,26 +67,26 @@ export const ContentMenu = ({visuals}) => {
         else {
             const jsxElements = (
                 <div id={`menu`}>    
-                    <div id={`resume`}>
-                        <h1 onClick={() => changeMenu(MenuItems.Resume)}>Resume</h1>
+                    <div id={`resume`} onClick={() => setChoice(MenuItems.Resume)}>
+                        {resume ? resume : DEFAULT_RESUME}
                     </div>
 
-                    <div id={`projects`}>
-                        <h1 onClick={() => changeMenu(MenuItems.Projects)}>Projects</h1>
+                    <div id={`projects`} onClick={() => setChoice(MenuItems.Projects)}>
+                        {projects ? projects : DEFAULT_PROJECTS}
                     </div>
                     
-                    <div id={`contact`}>
-                        <h1 onClick={() => changeMenu(MenuItems.Contact)}>Contact</h1>
+                    <div id={`contact`} onClick={() => setChoice(MenuItems.Contact)}>
+                        {contact ? contact : DEFAULT_CONTACT}
                     </div>
                 </div>    
             )
             setMenuItems(jsxElements)
         }
-    }, [visuals])
+    }, [visuals, choice])
 
     return (
         <div id='contentHolder'>   
-            {!selectedMenu ? menuItems : selectedMenu}
+            {menuItems}
         </div>
     )
 }

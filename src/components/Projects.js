@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProjectContainer } from '../utils/enums'
+import { ProjectContainer, MenuItems } from '../utils/enums'
 
 export const Projects = ({reset}) => {
 
@@ -10,7 +10,7 @@ export const Projects = ({reset}) => {
                 <li>Animarius</li>
             </ul>
             
-            <button onClick={() => reset()}>Go Back</button>
+            <button onClick={() => reset(MenuItems.Projects)}>Go Back</button>
         </div>
     )
 }
