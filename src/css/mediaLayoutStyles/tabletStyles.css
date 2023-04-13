@@ -17,12 +17,13 @@
   }
 
   #contentHolder {
-    position: absolute;
-    margin-left: 40vw;
     grid-area: CH;
+    position: relative;
     z-index: 2;
-    align-self: stretch;
     justify-self: center;
+    display: grid;
+    min-height: 670px;
+    min-width: 550px;
   }
 
   #resumeresumeGlow>h1 {
@@ -241,4 +242,109 @@
     opacity: .75;
   }
 
+  #contentHolder #contactSectionContainer {
+    border-radius: 10%;
+    margin: auto;
+    min-width: 100%;
+  }
+
+  #contactSectionContainer #LinkedIn {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    justify-content: center;
+    padding-right: 8%;
+  }
+
+  #LinkedIn a {
+    text-decoration: none;
+    color: rgba(0, 255, 170, 0.412);
+  }
+
+  #LinkedIn a:visited {
+    text-decoration: none;
+    color: rgba(0, 255, 170, 0.412);
+  }
+
+  #LinkedIn a:hover {
+    color: aquamarine;
+  }
+
+  #contentHolder #contactSectionContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4%;
+  }
+
+  #contentHolder #contactSectionContainer a {
+    color: rgba(0, 255, 170, 0.412);
+  }
+
+  #contentHolder #contactSectionContainer button {
+    align-self: center;
+    background: none;
+    border: none;
+    width: 80px;
+    height: 30px;
+    padding-right: 14%;
+  }
+
+  #contentHolder #resumeContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5%;
+  }
+
+  #contentHolder #resumeContainer a {
+    color: rgba(0, 255, 170, 0.412);
+    text-decoration: none;
+  }
+  
+  #contentHolder #resumeContainer a:hover {
+    color: aquamarine;
+    text-decoration: none;
+  }
+
+  #contentHolder #resumeContainer button {
+    background: none;
+    border: none;
+    width: 80px;
+    height: 30px;
+  }
+
+  #contentHolder #projectContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-right: 11%;
+  }
+
+  #contentHolder #projectContainer ul {
+    /* Uncomment out when adding more items if needed */
+    /* display: flex;
+    flex-direction: column;
+    justify-self: center; */
+    list-style-type: none;
+    padding: 0px;
+    color: rgba(0, 255, 170, 0.412);
+  }
+
+  #contentHolder #projectContainer ul li {
+    align-self:flex-start;
+    width: 200px;
+  }
+
+  #contentHolder #projectContainer button {
+    background: none;
+    border: none;
+    width: 80px;
+    height: 30px;  
+    margin-left: 22%;
+  }
 }
