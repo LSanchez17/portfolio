@@ -14,6 +14,41 @@ export const ContentMenu = ({visuals}) => {
     const [projects, setProjects] = useState('');
     const [resume, setResume] = useState('');
     const [choice, setChoice] = useState();
+    let jsxMenuElements;
+
+    if (visuals) {
+        jsxMenuElements = (
+                <div id={`menu${RegularKeyFramesEnum.FadeIn}`}>    
+                    <div id={`resume${RegularKeyFramesEnum.ResumeGlow}`} onClick={() => setChoice(MenuItems.Resume)}>
+                        {resume ? resume : DEFAULT_RESUME}
+                    </div>
+
+                    <div id={`projects${RegularKeyFramesEnum.ProjectGlow}`} onClick={() => setChoice(MenuItems.Projects)}>
+                        {projects ? projects : DEFAULT_PROJECTS}
+                    </div>
+                
+                    <div id={`contact${RegularKeyFramesEnum.ContactGlow}`} onClick={() => setChoice(MenuItems.Contact)}>
+                        {contact ? contact : DEFAULT_CONTACT}
+                    </div>
+                </div>    
+            )
+    } else {
+        jsxMenuElements = (
+            <div id={`menu`}>    
+                <div id={`resume`} onClick={() => setChoice(MenuItems.Resume)}>
+                    {resume ? resume : DEFAULT_RESUME}
+                </div>
+
+                <div id={`projects`} onClick={() => setChoice(MenuItems.Projects)}>
+                    {projects ? projects : DEFAULT_PROJECTS}
+                </div>
+                
+                <div id={`contact`} onClick={() => setChoice(MenuItems.Contact)}>
+                    {contact ? contact : DEFAULT_CONTACT}
+                </div>
+            </div>    
+        )
+    }
 
     const resetChoice = (itemToReset) => {
         if (itemToReset === MenuItems.Contact) {
@@ -43,50 +78,9 @@ export const ContentMenu = ({visuals}) => {
             }
     }, [choice])
 
-    useEffect(() => {
-        if (visuals) {
-            setTimeout((() => {
-                const jsxElements = (
-                    <div id={`menu${RegularKeyFramesEnum.FadeIn}`}>    
-                        <div id={`resume${RegularKeyFramesEnum.ResumeGlow}`} onClick={() => setChoice(MenuItems.Resume)}>
-                            {resume ? resume : DEFAULT_RESUME}
-                        </div>
-
-                        <div id={`projects${RegularKeyFramesEnum.ProjectGlow}`} onClick={() => setChoice(MenuItems.Projects)}>
-                            {projects ? projects : DEFAULT_PROJECTS}
-                        </div>
-                    
-                        <div id={`contact${RegularKeyFramesEnum.ContactGlow}`} onClick={() => setChoice(MenuItems.Contact)}>
-                            {contact ? contact : DEFAULT_CONTACT}
-                        </div>
-                    </div>    
-                )
-                setMenuItems(jsxElements)
-            }), 2000)
-        }
-        else {
-            const jsxElements = (
-                <div id={`menu`}>    
-                    <div id={`resume`} onClick={() => setChoice(MenuItems.Resume)}>
-                        {resume ? resume : DEFAULT_RESUME}
-                    </div>
-
-                    <div id={`projects`} onClick={() => setChoice(MenuItems.Projects)}>
-                        {projects ? projects : DEFAULT_PROJECTS}
-                    </div>
-                    
-                    <div id={`contact`} onClick={() => setChoice(MenuItems.Contact)}>
-                        {contact ? contact : DEFAULT_CONTACT}
-                    </div>
-                </div>    
-            )
-            setMenuItems(jsxElements)
-        }
-    }, [visuals, choice])
-
     return (
         <div id='contentHolder'>   
-            {menuItems}
+            {jsxMenuElements}
         </div>
     )
 }
