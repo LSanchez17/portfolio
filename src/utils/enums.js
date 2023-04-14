@@ -60,7 +60,9 @@ export const FirePitItems = {
     BigFlame: 'bigFlame',
     LeftLog: 'leftLog',
     RightLog: 'rightLog',
-    FirePit: 'firePit'
+    FirePit: 'firePit',
+    Flames: 'flames',
+    Kindling: 'kindling',
 }
 
 export const ContactSection = {

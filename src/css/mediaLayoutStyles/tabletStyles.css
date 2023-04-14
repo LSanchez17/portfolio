@@ -145,11 +145,13 @@
     height: 155px;
     width: 100%;
     display: grid;
+    grid-column: 1;
+    grid-row: 2;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
       ". . ."
-      "SF BF MF"
+      ". FLS ."
       ". LL RL"
     ;
   }
@@ -176,11 +178,18 @@
     border: 1px solid #000;
   }
 
+  #kindling {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column: 2;
+    grid-row: 2;
+    grid-template-areas: "LF MF RF";
+  }
+
   #smallFlameShootUpward {
-    grid-area: SF;
+    grid-area: MF;
     position: relative;
-    top: 40px;
-    right: 280px;
     z-index: -1;
     animation: smallFlameShootUpward 1s linear infinite;
     -webkit-animation: smallFlameShootUpward 1s linear infinite;
@@ -190,10 +199,8 @@
   }
 
   #smallFlameShootLeft {
-    grid-area: SF;
+    grid-area: LF;
     position: relative;
-    top: 60px;
-    right: 220px;
     z-index: -1;
     animation: smallFlameShootLeft 2.5s linear infinite;
     -webkit-animation: smallFlameShootLeft 2.5s linear infinite;
@@ -203,16 +210,25 @@
   }
 
   #smallFlameShootRight {
-    grid-area: SF;
+    grid-area: RF;
     position: relative;
-    top: 65px;
-    right: 300px;
     z-index: -1;
     animation: smallFlameShootRight 3.5s linear infinite;
     -webkit-animation: smallFlameShootRight 3.5s linear infinite;
     -moz-animation: smallFlameShootRight 3.5s linear infinite;
     -o-animation: smallFlameShootRight 3.5s linear infinite;
     -ms-animation: smallFlameShootRight 3.5s linear infinite;
+  }
+
+  #flames {
+    grid-area: FLS;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "FLS";
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto;
   }
 
   #mediumFlame {
@@ -223,8 +239,8 @@
     -o-animation: mediumFlame 700ms infinite alternate;
     -ms-animation: mediumFlame 700ms infinite alternate;
     position: relative;
-    top: 57px;
-    left: 4px;
+    grid-column: 2;
+    grid-row: 2;
     opacity: .65;
   }
 
@@ -236,8 +252,8 @@
     -o-animation: bigFlame 6s infinite alternate;
     -ms-animation: bigFlame 6s infinite alternate;
     position: relative;
-    top: 50px;
-    left: 273px;
+    grid-column: 2;
+    grid-row: 2;
     z-index: 0.5;
     opacity: .75;
   }
