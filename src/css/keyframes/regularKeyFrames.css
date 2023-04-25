@@ -1,0 +1,136 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeAway {
+    0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      } 
+}
+
+@-moz-keyframes fadeAway {
+    0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      } 
+}
+
+@-webkit-keyframes fadeAway {
+    0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      } 
+}
+
+@-o-keyframes fadeAway {
+    0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      } 
+}
+
+@-ms-keyframes fadeAway {
+    0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      } 
+}
+
+@keyframes resumeGlow {
+    100% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5.5px #fff,
+            0 0 9px rgba(0, 255, 170, 0.412),
+            0 0 15px rgba(0, 255, 170, 0.412),
+            0 0 35px rgba(0, 255, 170, 0.412),
+            0 0 40px rgba(0, 255, 170, 0.412),
+            0 0 45px rgba(0, 255, 170, 0.412),
+            0 0 70px rgba(0, 255, 170, 0.412);
+    }
+}
+
+@keyframes projectGlow {
+    100% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5.5px #fff,
+            0 0 9px rgba(0, 255, 170, 0.412),
+            0 0 15px rgba(0, 255, 170, 0.412),
+            0 0 35px rgba(0, 255, 170, 0.412),
+            0 0 40px rgba(0, 255, 170, 0.412),
+            0 0 45px rgba(0, 255, 170, 0.412),
+            0 0 70px rgba(0, 255, 170, 0.412);
+    }
+}
+
+@keyframes contactGlow {
+    100% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5.5px #fff,
+            0 0 9px rgba(0, 255, 170, 0.412),
+            0 0 15px rgba(0, 255, 170, 0.412),
+            0 0 35px rgba(0, 255, 170, 0.412),
+            0 0 40px rgba(0, 255, 170, 0.412),
+            0 0 45px rgba(0, 255, 170, 0.412),
+            0 0 70px rgba(0, 255, 170, 0.412);
+    }
+}
