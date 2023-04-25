@@ -113,155 +113,32 @@
   }
 
   #modal {
-    border: 2px solid purple;
+    grid-column: 1;
+    grid-row: -1;
+    border: 2px solid black;
     height: 250px;
-    margin-top: 25vh;
-    margin-left: 20vw;
-    margin-right: 20vw;
+    width: 250px;
+    margin: auto;
     padding: 10px 10px;
-    border-radius: 12%;
+    border-radius: 25%;
     background-color: #465669;
   }
 
   #modal>button {
-    border-radius: 15%;
+    border-radius: 100%;
     padding: 5px 15px 5px 15px;
-    margin: 0 15px 0 15px;
-    background: rgb(154, 207, 250);
+    margin: 35px 15px 0 15px;
+    background: rgba(59, 99, 118, 0.673);
     border: 1px solid #FFF;
-  }
-
-  #firePit {
-    animation: fadeIn 3s;
-    -webkit-animation: fadeIn 3s;
-    -moz-animation: fadeIn 3s;
-    -o-animation: fadeIn 3s;
-    -ms-animation: fadeIn 3s;
-    grid-area: FP;
-    position: absolute;
-    z-index: 2;
-    margin: auto;
-    top: 80vh;
-    height: 155px;
-    width: 100%;
-    display: grid;
-    grid-column: 1;
-    grid-row: 2;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-      ". . ."
-      ". FLS ."
-      ". LL RL"
-    ;
-  }
-
-  #leftLog {
-    background-color: #523A28;
-    grid-area: LL;
-    height: 20px;
-    width: 130px;
-    margin: auto;
-    border-radius: 20%;
-    transform: skew(190deg, 350deg);
-    border: 1px solid #000;
-  }
-
-  #rightLog {
-    background-color: #523A28;
-    grid-area: LL;
-    height: 20px;
-    width: 130px;
-    margin: auto;
-    border-radius: 20%;
-    transform: skew(350deg, 190deg);
-    border: 1px solid #000;
-  }
-
-  #kindling {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-column: 2;
-    grid-row: 2;
-    grid-template-areas: "LF MF RF";
-  }
-
-  #smallFlameShootUpward {
-    grid-area: MF;
-    position: relative;
-    z-index: -1;
-    animation: smallFlameShootUpward 1s linear infinite;
-    -webkit-animation: smallFlameShootUpward 1s linear infinite;
-    -moz-animation: smallFlameShootUpward 1s linear infinite;
-    -o-animation: smallFlameShootUpward 1s linear infinite;
-    -ms-animation: smallFlameShootUpward 1s linear infinite;
-  }
-
-  #smallFlameShootLeft {
-    grid-area: LF;
-    position: relative;
-    z-index: -1;
-    animation: smallFlameShootLeft 2.5s linear infinite;
-    -webkit-animation: smallFlameShootLeft 2.5s linear infinite;
-    -moz-animation: smallFlameShootLeft 2.5s linear infinite;
-    -o-animation: smallFlameShootLeft 2.5s linear infinite;
-    -ms-animation: smallFlameShootLeft 2.5s linear infinite;
-  }
-
-  #smallFlameShootRight {
-    grid-area: RF;
-    position: relative;
-    z-index: -1;
-    animation: smallFlameShootRight 3.5s linear infinite;
-    -webkit-animation: smallFlameShootRight 3.5s linear infinite;
-    -moz-animation: smallFlameShootRight 3.5s linear infinite;
-    -o-animation: smallFlameShootRight 3.5s linear infinite;
-    -ms-animation: smallFlameShootRight 3.5s linear infinite;
-  }
-
-  #flames {
-    grid-area: FLS;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "FLS";
-    grid-column: 2;
-    grid-row: 2;
-    margin: auto;
-  }
-
-  #mediumFlame {
-    grid-area: MF;
-    animation: mediumFlame 700ms infinite alternate;
-    -webkit-animation: mediumFlame 700ms infinite alternate;
-    -moz-animation: mediumFlame 700ms infinite alternate;
-    -o-animation: mediumFlame 700ms infinite alternate;
-    -ms-animation: mediumFlame 700ms infinite alternate;
-    position: relative;
-    grid-column: 2;
-    grid-row: 2;
-    opacity: .65;
-  }
-
-  #bigFlame {
-    grid-area: BF;
-    animation: bigFlame 6s infinite alternate;
-    -webkit-animation: bigFlame 6s infinite alternate;
-    -moz-animation: bigFlame 6s infinite alternate;
-    -o-animation: bigFlame 6s infinite alternate;
-    -ms-animation: bigFlame 6s infinite alternate;
-    position: relative;
-    grid-column: 2;
-    grid-row: 2;
-    z-index: 0.5;
-    opacity: .75;
+    color:#FFF;
+    font-size: large;
   }
 
   #contentHolder #contactSectionContainer {
     border-radius: 10%;
     margin: auto;
     min-width: 100%;
+    font-size: large;
   }
 
   #contactSectionContainer #LinkedIn {
@@ -319,6 +196,7 @@
   #contentHolder #resumeContainer a {
     color: rgba(0, 255, 170, 0.412);
     text-decoration: none;
+    font-size: large;
   }
   
   #contentHolder #resumeContainer a:hover {
@@ -354,6 +232,7 @@
   #contentHolder #projectContainer ul li {
     align-self:flex-start;
     width: 200px;
+    font-size: large;
   }
 
   #contentHolder #projectContainer button {
