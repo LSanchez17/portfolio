@@ -51,20 +51,6 @@ export const FormIds = {
     Submit: 'submit',
 }
 
-export const FirePitItems = {
-    FirePit: 'firePit',
-    SmallFlameShootLeft: 'smallFlameShootLeft',
-    SmallFlameShoottRight: 'smallFlameShootRight',
-    SmallFlameShootUpward: 'smallFlameShootUpward',
-    MediumFlame: 'mediumFlame',
-    BigFlame: 'bigFlame',
-    LeftLog: 'leftLog',
-    RightLog: 'rightLog',
-    FirePit: 'firePit',
-    Flames: 'flames',
-    Kindling: 'kindling',
-}
-
 export const ContactSection = {
     ContactSectionContainer: 'contactSectionContainer',
     ContactSection: 'contactSection',
