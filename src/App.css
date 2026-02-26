@@ -45,6 +45,12 @@
   opacity: 0;
 }
 
+.campfire-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .fire-glow {
   position: absolute;
   left: 50%;
