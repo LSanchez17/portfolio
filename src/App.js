@@ -76,6 +76,14 @@ function App() {
     coreFlame.scale.set(0.66, 1.2, 0.58);
     scene.add(coreFlame);
 
+    const emberGlow = new THREE.Mesh(
+      new THREE.CircleGeometry(1.25, 32),
+      new THREE.MeshBasicMaterial({ color: 0xff7a1a, transparent: true, opacity: 0.28 })
+    );
+    emberGlow.rotation.x = -Math.PI / 2;
+    emberGlow.position.set(0, 0.34, 0);
+    scene.add(emberGlow);
+
     const logGeometry = new THREE.CylinderGeometry(0.22, 0.22, 2.6, 18);
     const logMaterial = new THREE.MeshStandardMaterial({ color: 0x5a2f15, roughness: 0.85, metalness: 0.08 });
     const logLeft = new THREE.Mesh(logGeometry, logMaterial);
@@ -84,7 +92,32 @@ function App() {
     const logRight = new THREE.Mesh(logGeometry, logMaterial);
     logRight.rotation.z = -Math.PI / 3.6;
     logRight.position.set(0.2, 0.35, -0.1);
-    scene.add(logLeft, logRight);
+    const logBack = new THREE.Mesh(logGeometry, logMaterial);
+    logBack.rotation.x = Math.PI / 2.7;
+    logBack.rotation.z = Math.PI / 18;
+    logBack.position.set(0, 0.32, -0.32);
+    scene.add(logLeft, logRight, logBack);
+
+    const sparkCount = 14;
+    const sparkXSpread = 0.55;
+    const sparkZSpread = 0.42;
+    const sparkPositions = new Float32Array(sparkCount * 3);
+    for (let i = 0; i < sparkCount; i += 1) {
+      sparkPositions[i * 3] = (Math.random() - 0.5) * sparkXSpread;
+      sparkPositions[i * 3 + 1] = 0.55 + Math.random() * 1.2;
+      sparkPositions[i * 3 + 2] = (Math.random() - 0.5) * sparkZSpread;
+    }
+    const sparkGeometry = new THREE.BufferGeometry();
+    sparkGeometry.setAttribute('position', new THREE.BufferAttribute(sparkPositions, 3));
+    const sparkMaterial = new THREE.PointsMaterial({
+      color: 0xffb44c,
+      size: 0.06,
+      transparent: true,
+      opacity: 0.75,
+      depthWrite: false,
+    });
+    const sparks = new THREE.Points(sparkGeometry, sparkMaterial);
+    scene.add(sparks);
 
     let frameId;
     const animate = (time) => {
@@ -96,9 +129,21 @@ function App() {
       midFlame.position.x = Math.sin(time * 0.0024 + 0.45) * 0.045;
       coreFlame.position.x = Math.sin(time * 0.0031 + 1.1) * 0.032;
       point.intensity = 2 + Math.sin(time * 0.02) * 0.35;
+      emberGlow.material.opacity = 0.24 + (Math.sin(time * 0.014) + 1) * 0.08;
       outerFlame.rotation.y += 0.005;
       midFlame.rotation.y -= 0.007;
       coreFlame.rotation.y += 0.009;
+      const positions = sparkGeometry.attributes.position.array;
+      for (let i = 0; i < sparkCount; i += 1) {
+        const yIndex = i * 3 + 1;
+        positions[yIndex] += 0.02 + Math.sin((time + i * 95) * 0.0012) * 0.003;
+        if (positions[yIndex] > 2.5) {
+          positions[i * 3] = (Math.random() - 0.5) * sparkXSpread;
+          positions[yIndex] = 0.6;
+          positions[i * 3 + 2] = (Math.random() - 0.5) * sparkZSpread;
+        }
+      }
+      sparkGeometry.attributes.position.needsUpdate = true;
       renderer.render(scene, camera);
       frameId = window.requestAnimationFrame(animate);
     };
@@ -112,6 +157,10 @@ function App() {
       midFlameMaterial.dispose();
       coreFlameGeometry.dispose();
       coreFlameMaterial.dispose();
+      emberGlow.geometry.dispose();
+      emberGlow.material.dispose();
+      sparkGeometry.dispose();
+      sparkMaterial.dispose();
       logGeometry.dispose();
       logMaterial.dispose();
       renderer.dispose();
