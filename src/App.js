@@ -30,30 +30,51 @@ function App() {
     point.position.set(0, 2.4, 2.1);
     scene.add(ambient, point);
 
-    const flameGeometry = new THREE.ConeGeometry(0.95, 2.8, 24);
-    const flameMaterial = new THREE.MeshStandardMaterial({
+    const outerFlameGeometry = new THREE.SphereGeometry(0.9, 22, 22);
+    const outerFlameMaterial = new THREE.MeshStandardMaterial({
       color: 0xff8c1a,
       emissive: 0xff5a00,
       emissiveIntensity: 1,
       roughness: 0.55,
       metalness: 0,
+      transparent: true,
+      opacity: 0.82,
     });
-    const flame = new THREE.Mesh(flameGeometry, flameMaterial);
-    flame.position.y = 1.55;
-    scene.add(flame);
+    const outerFlame = new THREE.Mesh(outerFlameGeometry, outerFlameMaterial);
+    outerFlame.position.y = 1.55;
+    outerFlame.scale.set(0.95, 1.45, 0.85);
+    scene.add(outerFlame);
 
-    const innerFlame = new THREE.Mesh(
-      new THREE.ConeGeometry(0.5, 1.8, 24),
-      new THREE.MeshStandardMaterial({
+    const midFlameGeometry = new THREE.SphereGeometry(0.58, 20, 20);
+    const midFlameMaterial = new THREE.MeshStandardMaterial({
+      color: 0xffb347,
+      emissive: 0xff9d3b,
+      emissiveIntensity: 0.95,
+      roughness: 0.5,
+      metalness: 0,
+      transparent: true,
+      opacity: 0.86,
+    });
+    const midFlame = new THREE.Mesh(midFlameGeometry, midFlameMaterial);
+    midFlame.position.y = 1.45;
+    midFlame.position.z = 0.08;
+    midFlame.scale.set(0.82, 1.28, 0.72);
+    scene.add(midFlame);
+
+    const coreFlameGeometry = new THREE.SphereGeometry(0.34, 18, 18);
+    const coreFlameMaterial = new THREE.MeshStandardMaterial({
         color: 0xffd66e,
         emissive: 0xffcc66,
         emissiveIntensity: 0.9,
-        roughness: 0.5,
+        roughness: 0.42,
         metalness: 0,
-      })
-    );
-    innerFlame.position.y = 1.35;
-    scene.add(innerFlame);
+        transparent: true,
+        opacity: 0.9,
+      });
+    const coreFlame = new THREE.Mesh(coreFlameGeometry, coreFlameMaterial);
+    coreFlame.position.set(0, 1.34, 0.16);
+    coreFlame.scale.set(0.66, 1.2, 0.58);
+    scene.add(coreFlame);
 
     const logGeometry = new THREE.CylinderGeometry(0.22, 0.22, 2.6, 18);
     const logMaterial = new THREE.MeshStandardMaterial({ color: 0x5a2f15, roughness: 0.85, metalness: 0.08 });
@@ -68,11 +89,16 @@ function App() {
     let frameId;
     const animate = (time) => {
       const flicker = 1 + Math.sin(time * 0.01) * 0.07;
-      flame.scale.set(1, flicker, 1);
-      innerFlame.scale.set(1, 1 + Math.sin(time * 0.013) * 0.12, 1);
+      outerFlame.scale.y = 1.45 * flicker;
+      midFlame.scale.y = 1.28 * (1 + Math.sin(time * 0.013) * 0.12);
+      coreFlame.scale.y = 1.2 * (1 + Math.sin(time * 0.016) * 0.15);
+      outerFlame.position.x = Math.sin(time * 0.002) * 0.06;
+      midFlame.position.x = Math.sin(time * 0.0024 + 0.45) * 0.045;
+      coreFlame.position.x = Math.sin(time * 0.0031 + 1.1) * 0.032;
       point.intensity = 2 + Math.sin(time * 0.02) * 0.35;
-      flame.rotation.y += 0.005;
-      innerFlame.rotation.y -= 0.007;
+      outerFlame.rotation.y += 0.005;
+      midFlame.rotation.y -= 0.007;
+      coreFlame.rotation.y += 0.009;
       renderer.render(scene, camera);
       frameId = window.requestAnimationFrame(animate);
     };
@@ -80,10 +106,12 @@ function App() {
 
     return () => {
       window.cancelAnimationFrame(frameId);
-      flameGeometry.dispose();
-      flameMaterial.dispose();
-      innerFlame.geometry.dispose();
-      innerFlame.material.dispose();
+      outerFlameGeometry.dispose();
+      outerFlameMaterial.dispose();
+      midFlameGeometry.dispose();
+      midFlameMaterial.dispose();
+      coreFlameGeometry.dispose();
+      coreFlameMaterial.dispose();
       logGeometry.dispose();
       logMaterial.dispose();
       renderer.dispose();
