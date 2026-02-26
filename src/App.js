@@ -1,13 +1,14 @@
 import './App.css';
+import { Socials } from './utils/enums';
 
 function App() {
   return (
     <div className="portfolio-scene">
       <div className="floating-links">
-        <a className="floating-circle github-circle" href="https://github.com/LSanchez17" target="_blank" rel="noreferrer">
+        <a className="floating-circle github-circle" href={Socials.GitHubUri} target="_blank" rel="noreferrer">
           GitHub
         </a>
-        <a className="floating-circle linkedin-circle" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+        <a className="floating-circle linkedin-circle" href={Socials.LinkedInUri} target="_blank" rel="noreferrer">
           LinkedIn
         </a>
         <a className="floating-circle about-circle" href="#about">
