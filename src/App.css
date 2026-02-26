@@ -38,16 +38,72 @@
 }
 
 .campfire {
-  font-size: 84px;
+  width: 190px;
+  height: 170px;
+  position: relative;
   animation: fadeIn 2.2s ease forwards;
   opacity: 0;
 }
 
-.about-section {
+.fire-glow {
   position: absolute;
-  bottom: 32px;
-  opacity: 0.8;
-  font-size: 0.95rem;
+  left: 50%;
+  bottom: 34px;
+  width: 130px;
+  height: 65px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255, 136, 0, 0.65) 0%, rgba(255, 90, 0, 0) 72%);
+  filter: blur(4px);
+}
+
+.flame {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  border-radius: 52% 48% 64% 36% / 60% 55% 45% 40%;
+  transform-origin: 50% 100%;
+  animation: flicker 1.6s ease-in-out infinite alternate;
+}
+
+.flame-back {
+  width: 76px;
+  height: 110px;
+  background: radial-gradient(circle at 50% 85%, #ffd76a 2%, #ff9a1f 48%, #cf3a04 100%);
+  filter: blur(1px);
+}
+
+.flame-mid {
+  width: 56px;
+  height: 84px;
+  background: radial-gradient(circle at 50% 82%, #fff5c9 2%, #ffd552 36%, #ff7b00 100%);
+  animation-delay: 0.2s;
+}
+
+.flame-front {
+  width: 38px;
+  height: 62px;
+  background: radial-gradient(circle at 50% 82%, #fff 2%, #ffe79a 42%, #ff9d00 100%);
+  animation-delay: 0.35s;
+}
+
+.log {
+  position: absolute;
+  width: 90px;
+  height: 14px;
+  bottom: 34px;
+  left: 50%;
+  margin-left: -45px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #4d2410, #6e3a1d, #4d2410);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.log-left {
+  transform: rotate(18deg) translateY(5px);
+}
+
+.log-right {
+  transform: rotate(-16deg) translateY(5px);
 }
 
 @keyframes fadeIn {
@@ -70,5 +126,14 @@
   50% {
     transform: translateY(-38px);
     opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    transform: translateX(-50%) scale(0.95) rotate(-3deg);
+  }
+  100% {
+    transform: translateX(-50%) scale(1.04) rotate(3deg);
   }
 }
