@@ -1,6 +1,5 @@
 {
   "framework": "create-react-app",
   "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "nodeVersion": "24.x"
+  "outputDirectory": "build"
 }
