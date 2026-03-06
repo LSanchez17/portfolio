@@ -13,12 +13,12 @@ export const Snow = ({visuals, canStart}) => {
         </h2>
     )
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         const increment = () => {
             setSnowballs(snowballs => snowballs += 1)
         }
 
-        // Look at increasing the dissapearance by one or two seconds or incresing duration of animation
         const createSnow = setInterval(() => {
             // Bitwise negation is fine here since the number is well within the 2^31 range
             const randomValue = ~~(Math.random() * ((Object.keys(SnowKeyFramesEnum).length) - 0) + 0);
@@ -52,6 +52,7 @@ export const Snow = ({visuals, canStart}) => {
         return () => {
             return clearInterval(createSnow);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [snowballs])
 
     return(

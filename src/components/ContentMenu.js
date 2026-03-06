@@ -9,7 +9,6 @@ const DEFAULT_PROJECTS = (<h1>Projects</h1>);
 const DEFAULT_RESUME = (<h1>Resume</h1>);
 
 export const ContentMenu = ({visuals}) => {
-    const [menuItems, setMenuItems] = useState()
     const [contact, setContact] = useState('');
     const [projects, setProjects] = useState('');
     const [resume, setResume] = useState('');
@@ -61,20 +60,17 @@ export const ContentMenu = ({visuals}) => {
             setResume(DEFAULT_RESUME);
         }
     }
-    
-    const ContactComponent = (<Contact reset={resetChoice} />);
-    const ProjectsComponent = (<Projects reset={resetChoice} />);
-    const ResumeComponent = (<Resume reset={resetChoice} />);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
             if (MenuItems.Contact === choice) {
-                setContact(ContactComponent);
+                setContact(<Contact reset={resetChoice} />);
             }
             if (MenuItems.Projects === choice) {
-                setProjects(ProjectsComponent);
+                setProjects(<Projects reset={resetChoice} />);
             }
             if (MenuItems.Resume === choice) {
-                setResume(ResumeComponent);
+                setResume(<Resume reset={resetChoice} />);
             }
     }, [choice])
 

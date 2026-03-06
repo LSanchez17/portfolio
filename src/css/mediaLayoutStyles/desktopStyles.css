@@ -1,9 +1,98 @@
 @media screen and (min-width: 1200px) {
   body {
-    font-family: bradley hand, cursive;
-    background: radial-gradient(ellipse at bottom, #465669 0%, #1d2131 100%);
-    filter: drop-shadow(0 0 10px rgb(168, 143, 143));
+    font-family: 'Orbitron', 'Share Tech Mono', monospace;
+    background: #0d0221;
+    margin: 0;
+    padding: 0;
     height: 100vh;
+    overflow: hidden;
+  }
+
+  #frame {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Synthwave retro grid background */
+  #synthwaveGrid {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background-image:
+      linear-gradient(rgba(255, 0, 255, 0.25) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 255, 0.25) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: center bottom;
+    transform: perspective(400px) rotateX(60deg);
+    transform-origin: bottom center;
+    z-index: 0;
+    animation: gridScroll 2s linear infinite;
+  }
+
+  /* Gradient horizon overlay */
+  #synthwaveGrid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, #0d0221 0%, transparent 100%);
+  }
+
+  /* Scanlines overlay */
+  #scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.08) 0px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Hero header */
+  #heroHeader {
+    position: relative;
+    z-index: 10;
+    padding: 30px 0 10px 0;
+    border-bottom: 2px solid #ff00ff;
+    box-shadow: 0 4px 30px rgba(255, 0, 255, 0.4);
+    margin-bottom: 5px;
+  }
+
+  #heroName {
+    font-family: 'Orbitron', monospace;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    color: #fff;
+    animation: heroGlow 2.5s ease-in-out infinite alternate, neonFlicker 8s infinite;
+    text-transform: uppercase;
+  }
+
+  #heroTitle {
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: #00ffff;
+    animation: subtitleGlow 3s ease-in-out infinite alternate;
+    margin-top: 8px;
+    text-transform: uppercase;
   }
 
   #menufadeIn {
@@ -12,7 +101,7 @@
     -moz-animation: fadeIn 6s;
     -o-animation: fadeIn 6s;
     -ms-animation: fadeIn 6s;
-    margin-top: 75px;
+    margin-top: 20px;
   }
 
   #contentHolder {
@@ -21,7 +110,7 @@
     z-index: 2;
     justify-self: center;
     display: grid;
-    height: 400px;
+    height: 350px;
     width: auto;
   }
 
@@ -58,19 +147,32 @@
     "SC"
     "CH"
     "."; 
-    height: 100vh;
+    height: 75vh;
+    position: relative;
+    z-index: 2;
   }
 
-  #frame {
-    width: 100%;
-    height: auto;
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
+  /* Menu headings */
+  #resume h1, #projects h1, #contact h1,
+  #resumeresumeGlow h1, #projectsprojectGlow h1, #contactcontactGlow h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
   }
 
+  #resume h1:hover, #projects h1:hover, #contact h1:hover {
+    text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+    color: #ff00ff;
+  }
+
+  /* Neon particle dots */
   #snow {
-    background-color: #FFF;
+    background-color: #ff00ff;
+    box-shadow: 0 0 6px #ff00ff, 0 0 12px #ff00ff;
     border-radius: 100%;
     height: 10px;
     width: 10px;
@@ -80,7 +182,8 @@
   }
 
   #smallSnow {
-    background-color: #FFF;
+    background-color: #00ffff;
+    box-shadow: 0 0 4px #00ffff, 0 0 8px #00ffff;
     border-radius: 100%;
     height: 5px;
     width: 5px;
@@ -90,7 +193,8 @@
   }
 
   #bigSnow {
-    background-color: #FFF;
+    background-color: #bf00ff;
+    box-shadow: 0 0 8px #bf00ff, 0 0 16px #bf00ff;
     border-radius: 100%;
     height: 14px;
     width: 14px;
@@ -104,61 +208,131 @@
     height: 100vh;
   }
 
+  #regularMessage {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    letter-spacing: 0.1em;
+  }
+
   #menu {
-    margin-top: 250px;
+    margin-top: 150px;
   }
 
   #modal {
     grid-column: 1;
     grid-row: 2;
-    border: 2px solid black;
-    height: 250px;
-    width: 250px;
+    border: 2px solid #ff00ff;
+    height: 280px;
+    width: 300px;
     margin: auto;
     align-items: center;
-    padding: 10px 10px;
-    border-radius: 25%;
-    background-color: #465669;
+    padding: 20px 20px;
+    border-radius: 0;
+    background: rgba(13, 2, 33, 0.92);
+    box-shadow: 0 0 20px #ff00ff, 0 0 60px rgba(255, 0, 255, 0.3), inset 0 0 20px rgba(255, 0, 255, 0.05);
+    animation: borderPulse 3s infinite;
+    position: relative;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #modal h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: neonFlicker 6s infinite;
   }
 
   #modal>button {
-    border-radius: 100%;
-    padding: 5px 15px 5px 15px;
-    margin: 35px 15px 0 15px;
-    background: rgba(59, 99, 118, 0.673);
-    border: 1px solid #FFF;
-    color:#FFF;
-    font-size: large;
+    border-radius: 0;
+    padding: 10px 25px;
+    margin: 15px 10px 0 10px;
+    background: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px #00ffff, inset 0 0 5px rgba(0, 255, 255, 0.1);
+    transition: all 0.2s;
+    text-shadow: 0 0 8px #00ffff;
+  }
+
+  #modal>button:hover {
+    background: rgba(0, 255, 255, 0.15);
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, inset 0 0 10px rgba(0, 255, 255, 0.2);
+    color: #fff;
+    text-shadow: 0 0 12px #00ffff;
+  }
+
+  /* Back button SVG color */
+  #contentHolder button svg path {
+    fill: #ff00ff;
+    filter: drop-shadow(0 0 4px #ff00ff);
+  }
+
+  #contentHolder button:hover svg path {
+    fill: #00ffff;
+    filter: drop-shadow(0 0 8px #00ffff);
   }
 
   #contentHolder #contactSectionContainer {
-    border-radius: 10%;
+    border-radius: 0;
     margin: auto;
     min-width: 100%;
     font-size: large;
   }
 
-  #contactSectionContainer #LinkedIn {
-    font-size: large;
+  #contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  #contactSectionContainer #LinkedIn,
+  #contactSectionContainer #GitHub {
+    font-size: 1.1rem;
     display: flex;
     flex-direction: row;
-    column-gap: 5px;
+    align-items: center;
+    column-gap: 10px;
     justify-content: center;
-    padding-right: 5.25%;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.1em;
   }
 
-  #LinkedIn a {
+  #contactSectionContainer #LinkedIn svg,
+  #contactSectionContainer #GitHub svg {
+    fill: #ff00ff;
+    filter: drop-shadow(0 0 6px #ff00ff);
+  }
+
+  #LinkedIn a, #GitHub a {
     text-decoration: none;
-    color: rgba(0, 255, 170, 0.412);
+    color: #ff00ff;
+    text-shadow: 0 0 8px #ff00ff;
+    transition: all 0.2s;
   }
 
-  #LinkedIn a:visited {
+  #LinkedIn a:visited, #GitHub a:visited {
     text-decoration: none;
-    color: rgba(0, 255, 170, 0.412);
+    color: #ff00ff;
   }
 
-  #LinkedIn a:hover {
-    color: aquamarine;
+  #LinkedIn a:hover, #GitHub a:hover {
+    color: #fff;
+    text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
   }
 
   #contentHolder #contactSectionContainer {
@@ -167,10 +341,12 @@
     justify-content: center;
     align-items: center;
     padding-left: 4%;
+    gap: 20px;
   }
 
   #contentHolder #contactSectionContainer a {
-    color: rgba(0, 255, 170, 0.412);
+    color: #ff00ff;
+    text-shadow: 0 0 8px #ff00ff;
   }
 
   #contentHolder #contactSectionContainer button {
@@ -180,6 +356,7 @@
     width: 80px;
     height: 30px;
     padding-right: 14%;
+    cursor: pointer;
   }
 
   #contentHolder #resumeContainer {
@@ -191,14 +368,24 @@
   }
 
   #contentHolder #resumeContainer a {
-    color: rgba(0, 255, 170, 0.412);
+    color: #00ffff;
     text-decoration: none;
-    font-size: large;
+    font-size: 1.1rem;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #00ffff;
+    text-transform: uppercase;
+    border: 2px solid #00ffff;
+    padding: 10px 25px;
+    box-shadow: 0 0 10px #00ffff, inset 0 0 5px rgba(0,255,255,0.1);
+    transition: all 0.2s;
   }
   
   #contentHolder #resumeContainer a:hover {
-    color: aquamarine;
-    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 25px #00ffff, 0 0 50px rgba(0,255,255,0.3);
   }
 
   #contentHolder #resumeContainer button {
@@ -206,37 +393,68 @@
     border: none;
     width: 80px;
     height: 30px;
+    cursor: pointer;
   }
 
   #contentHolder #projectContainer {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    align-items: center;
-    padding-right: 15.25%;
+    align-items: flex-start;
+    padding-right: 5%;
+    gap: 20px;
   }
 
   #contentHolder #projectContainer ul {
-    /* Uncomment out when adding more items if needed */
-    /* display: flex;
-    flex-direction: column;
-    justify-self: center; */
     list-style-type: none;
     padding: 0px;
-    color: rgba(0, 255, 170, 0.412);
+    text-align: left;
   }
 
   #contentHolder #projectContainer ul li {
-    align-self:flex-start;
-    width: 200px;
-    font-size: large;
+    font-size: 0.95rem;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 0.05em;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(191, 0, 255, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+  }
+
+  #contentHolder #projectContainer ul li .proj-name {
+    color: #bf00ff;
+    text-shadow: 0 0 8px #bf00ff;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+
+  #contentHolder #projectContainer ul li .proj-name:hover {
+    color: #fff;
+    text-shadow: 0 0 15px #bf00ff, 0 0 30px #bf00ff;
+  }
+
+  #contentHolder #projectContainer ul li .proj-desc {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  #contentHolder #projectContainer ul li .proj-lang {
+    color: #00ffff;
+    text-shadow: 0 0 6px #00ffff;
+    font-size: 0.8rem;
+  }
+
+  #contentHolder #projectContainer ul li a {
+    text-decoration: none;
   }
 
   #contentHolder #projectContainer button {
     background: none;
     border: none;
     width: 80px;
-    height: 30px;  
-    margin-left: 22%;
+    height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
   }
 }

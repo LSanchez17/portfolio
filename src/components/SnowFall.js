@@ -31,9 +31,15 @@ export const SnowFall = () => {
     // render the rest when the modal is answered, just show modal initially
     return (
         <div id='frame'>
+            <div id='synthwaveGrid'></div>
+            <div id='scanlines'></div>
+            <header id='heroHeader'>
+                <div id='heroName'>LUIS SANCHEZ</div>
+                <div id='heroTitle'>SOFTWARE ENGINEER ✦ INDIANAPOLIS, IN</div>
+            </header>
             <div id='snowingFrame'>
                 {!modalAnswered && <Modal 
-                                      question={`would you like full visual effects?`} 
+                                      question={`ENABLE VISUAL EFFECTS?`} 
                                       answerModal={answerModal} 
                                       updateQuestionAnswer={updateVisualEffects}/>}
                 {modalAnswered && content }
