@@ -39,8 +39,8 @@ export const Projects = ({reset}) => {
     return(
         <div id={ProjectContainer.ProjectContainer}>
             <ul>
-                {projects.map((p) => (
-                    <li key={p.name}>
+                {projects.map((p, idx) => (
+                    <li key={idx}>
                         <a href={p.url} target="_blank" rel="noreferrer">
                             <span className="proj-name">{p.name}</span>
                         </a>

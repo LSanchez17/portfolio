@@ -40,7 +40,7 @@ export const MenuItems = {
 
 export const Socials = {
     LinkedIn: 'LinkedIn',
-    LinkedInUri: 'http://linkedin.com/in/codebyluis',
+    LinkedInUri: 'https://linkedin.com/in/codebyluis',
     GitHub: 'GitHub',
     GitHubUri: 'https://github.com/LSanchez17'
 }
