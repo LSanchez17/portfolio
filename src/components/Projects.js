@@ -25,12 +25,6 @@ const projects = [
         desc: 'Generates printable math problems',
         url: 'https://github.com/LSanchez17/mathSheetGenerator',
         lang: 'TypeScript'
-    },
-    {
-        name: 'inventoryTool',
-        desc: 'Retail inventory counting tool',
-        url: 'https://github.com/LSanchez17/inventoryTool',
-        lang: 'JavaScript'
     }
 ]
 

@@ -1,30 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { UserMessages, AnimationStylePresets,
     SnowKeyFramesEnum, SnowTypesEnum } from '../utils/enums';
 
+const MAX_SNOWFLAKES = 6;
+const SNOW_INTERVAL_MS = 3000;
+const snowKeys = Object.keys(SnowKeyFramesEnum);
+const possibleSnow = [SnowTypesEnum.Snow, SnowTypesEnum.SmallSnow, SnowTypesEnum.BigSnow];
+
 export const Snow = ({visuals, canStart}) => {
     const [snowFall, setSnowFall] = useState([]);
-    const [snowballs, setSnowballs] = useState(0);
+    const keyRef = useRef(0);
 
-    const possibleSnow = [SnowTypesEnum.Snow, SnowTypesEnum.SmallSnow, SnowTypesEnum.BigSnow];
     const message = (
         <h2 id={`${UserMessages.regularMessage}`}>
             Imagine snow falling in the background!
         </h2>
     )
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
-        const increment = () => {
-            setSnowballs(snowballs => snowballs += 1)
-        }
-
         const createSnow = setInterval(() => {
             // Bitwise negation is fine here since the number is well within the 2^31 range
-            const randomValue = ~~(Math.random() * ((Object.keys(SnowKeyFramesEnum).length) - 0) + 0);
-            const direction = SnowKeyFramesEnum[Object.keys(SnowKeyFramesEnum)[randomValue]];
+            const randomValue = ~~(Math.random() * snowKeys.length);
+            const direction = SnowKeyFramesEnum[snowKeys[randomValue]];
             const duration = ~~(Math.random() * (13 - 7) + 7);
-            const snowType = possibleSnow[Math.floor(Math.random() * possibleSnow.length)]
+            const snowType = possibleSnow[Math.floor(Math.random() * possibleSnow.length)];
             const animationStyles = {
                 [AnimationStylePresets.NormalAnimation]: `${direction} ${duration}s linear infinite`,
                 [AnimationStylePresets.WebKitAnimation]: `${direction} ${duration}s linear infinite`,
@@ -32,28 +31,23 @@ export const Snow = ({visuals, canStart}) => {
                 [AnimationStylePresets.OAnimation]: `${direction} ${duration}s linear infinite`,
                 [AnimationStylePresets.MsAnimation]: `${direction} ${duration}s linear infinite`
             }
-            
+
             const snowJsxDiv = (
-                <span 
-                    key={snowballs}
+                <span
+                    key={keyRef.current++}
                     id={snowType}
                     style={animationStyles}>
                 </span>
             )
 
-            if ( snowFall.length > 7 ) {
-                    setSnowFall(snowFall.unshift());
-            }
+            setSnowFall(prev => {
+                const next = [...prev, snowJsxDiv];
+                return next.length > MAX_SNOWFLAKES ? next.slice(next.length - MAX_SNOWFLAKES) : next;
+            });
+        }, SNOW_INTERVAL_MS)
 
-            setSnowFall([...snowFall, snowJsxDiv]);
-            increment();
-        }, 2500)
-
-        return () => {
-            return clearInterval(createSnow);
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [snowballs])
+        return () => clearInterval(createSnow);
+    }, [])
 
     return(
         <div id='snowCollector'>
