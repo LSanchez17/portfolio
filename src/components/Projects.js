@@ -40,7 +40,7 @@ export const Projects = ({reset}) => {
 
     return(
         <div id={ProjectContainer.ProjectContainer}>
-            <div className="proj-grid">
+            <div className="proj-grid cards-wrapper">
                 {projects.map((p, idx) => (
                     <a key={idx} href={p.url} target="_blank" rel="noreferrer" className="proj-card">
                         <div className="proj-card-header">
@@ -53,7 +53,7 @@ export const Projects = ({reset}) => {
                     </a>
                 ))}
             </div>
-            <button onClick={() => reset(MenuItems.Projects)}><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg></button>
+            <button onClick={(e) => { e.stopPropagation(); reset(MenuItems.Projects); }}><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg></button>
         </div>
     )
 }
