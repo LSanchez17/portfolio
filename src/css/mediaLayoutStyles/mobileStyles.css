@@ -393,40 +393,69 @@
     gap: 10px;
   }
 
-  #contentHolder #projectContainer ul {
-    list-style-type: none;
-    padding: 0px;
+  #contentHolder #projectContainer .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
     text-align: left;
+    overflow-y: auto;
+    max-height: 280px;
   }
 
-  #contentHolder #projectContainer ul li {
-    font-size: 0.75rem;
-    font-family: 'Share Tech Mono', monospace;
-    padding: 5px 0;
-    border-bottom: 1px solid rgba(191, 0, 255, 0.3);
+  #contentHolder #projectContainer .proj-card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid rgba(191, 0, 255, 0.4);
+    padding: 8px 10px;
+    background: rgba(13, 2, 33, 0.75);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  #contentHolder #projectContainer .proj-card:hover {
+    border-color: #bf00ff;
+    box-shadow: 0 0 10px rgba(191, 0, 255, 0.5);
+    background: rgba(191, 0, 255, 0.08);
+  }
+
+  #contentHolder #projectContainer .proj-card-header {
     display: flex;
-    flex-wrap: wrap;
-    gap: 3px;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 4px;
   }
 
-  #contentHolder #projectContainer ul li .proj-name {
+  #contentHolder #projectContainer .proj-card-header svg {
+    fill: #bf00ff;
+    filter: drop-shadow(0 0 3px #bf00ff);
+    flex-shrink: 0;
+  }
+
+  #contentHolder #projectContainer .proj-name {
     color: #bf00ff;
     text-shadow: 0 0 8px #bf00ff;
     font-weight: bold;
+    font-size: 0.7rem;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.04em;
   }
 
-  #contentHolder #projectContainer ul li .proj-desc {
-    color: rgba(255, 255, 255, 0.8);
+  #contentHolder #projectContainer .proj-desc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.65rem;
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0 0 5px 0;
+    line-height: 1.3;
   }
 
-  #contentHolder #projectContainer ul li .proj-lang {
+  #contentHolder #projectContainer .proj-lang {
+    display: inline-block;
     color: #00ffff;
     text-shadow: 0 0 6px #00ffff;
-    font-size: 0.7rem;
-  }
-
-  #contentHolder #projectContainer ul li a {
-    text-decoration: none;
+    font-size: 0.6rem;
+    font-family: 'Share Tech Mono', monospace;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    padding: 1px 5px;
   }
 
   #contentHolder #projectContainer button {
