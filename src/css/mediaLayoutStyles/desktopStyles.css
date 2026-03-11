@@ -405,48 +405,70 @@
     gap: 20px;
   }
 
-  #contentHolder #projectContainer ul {
-    list-style-type: none;
-    padding: 0px;
+  #contentHolder #projectContainer .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     text-align: left;
+    overflow-y: auto;
+    max-height: 300px;
   }
 
-  #contentHolder #projectContainer ul li {
-    font-size: 0.95rem;
-    font-family: 'Share Tech Mono', monospace;
-    letter-spacing: 0.05em;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(191, 0, 255, 0.3);
+  #contentHolder #projectContainer .proj-card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid rgba(191, 0, 255, 0.4);
+    padding: 10px 12px;
+    background: rgba(13, 2, 33, 0.75);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  #contentHolder #projectContainer .proj-card:hover {
+    border-color: #bf00ff;
+    box-shadow: 0 0 12px rgba(191, 0, 255, 0.6), inset 0 0 8px rgba(191, 0, 255, 0.1);
+    background: rgba(191, 0, 255, 0.08);
+  }
+
+  #contentHolder #projectContainer .proj-card-header {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    margin-bottom: 5px;
   }
 
-  #contentHolder #projectContainer ul li .proj-name {
+  #contentHolder #projectContainer .proj-card-header svg {
+    fill: #bf00ff;
+    filter: drop-shadow(0 0 4px #bf00ff);
+    flex-shrink: 0;
+  }
+
+  #contentHolder #projectContainer .proj-name {
     color: #bf00ff;
     text-shadow: 0 0 8px #bf00ff;
     font-weight: bold;
-    transition: all 0.2s;
+    font-size: 0.85rem;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.05em;
   }
 
-  #contentHolder #projectContainer ul li .proj-name:hover {
-    color: #fff;
-    text-shadow: 0 0 15px #bf00ff, 0 0 30px #bf00ff;
+  #contentHolder #projectContainer .proj-desc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.75rem;
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0 0 6px 0;
+    line-height: 1.4;
   }
 
-  #contentHolder #projectContainer ul li .proj-desc {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  #contentHolder #projectContainer ul li .proj-lang {
+  #contentHolder #projectContainer .proj-lang {
+    display: inline-block;
     color: #00ffff;
     text-shadow: 0 0 6px #00ffff;
-    font-size: 0.8rem;
-  }
-
-  #contentHolder #projectContainer ul li a {
-    text-decoration: none;
+    font-size: 0.65rem;
+    font-family: 'Share Tech Mono', monospace;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    padding: 1px 6px;
+    letter-spacing: 0.05em;
   }
 
   #contentHolder #projectContainer button {
