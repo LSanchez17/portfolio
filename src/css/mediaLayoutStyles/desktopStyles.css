@@ -53,13 +53,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.08) 0px,
-      rgba(0, 0, 0, 0.08) 1px,
-      transparent 1px,
-      transparent 3px
-    );
+    background: repeating-linear-gradient(0deg,
+        rgba(0, 0, 0, 0.08) 0px,
+        rgba(0, 0, 0, 0.08) 1px,
+        transparent 1px,
+        transparent 3px);
     pointer-events: none;
     z-index: 9999;
   }
@@ -102,6 +100,11 @@
     -o-animation: fadeIn 6s;
     -ms-animation: fadeIn 6s;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: center;
+    width: 100%;
   }
 
   #contentHolder {
@@ -139,22 +142,26 @@
   }
 
   #snowingFrame {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 10% auto 10%; 
-    gap: 21px 0px; 
-    grid-template-areas: 
-    "SC"
-    "CH"
-    "."; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% auto 10%;
+    gap: 32px 0px;
+    grid-template-areas:
+      "SC"
+      "CH"
+      ".";
     height: 75vh;
     position: relative;
     z-index: 2;
   }
 
   /* Menu headings */
-  #resume h1, #projects h1, #contact h1,
-  #resumeresumeGlow h1, #projectsprojectGlow h1, #contactcontactGlow h1 {
+  #resume h1,
+  #projects h1,
+  #contact h1,
+  #resumeresumeGlow h1,
+  #projectsprojectGlow h1,
+  #contactcontactGlow h1 {
     font-family: 'Orbitron', monospace;
     font-size: 1.6rem;
     font-weight: 700;
@@ -164,7 +171,9 @@
     transition: all 0.2s;
   }
 
-  #resume h1:hover, #projects h1:hover, #contact h1:hover {
+  #resume h1:hover,
+  #projects h1:hover,
+  #contact h1:hover {
     text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff;
     color: #ff00ff;
   }
@@ -217,7 +226,7 @@
   }
 
   #menu {
-    margin-top: 150px;
+    margin-top: 180px;
   }
 
   #modal {
@@ -297,7 +306,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
   }
 
   #contactSectionContainer #LinkedIn,
@@ -318,19 +327,22 @@
     filter: drop-shadow(0 0 6px #ff00ff);
   }
 
-  #LinkedIn a, #GitHub a {
+  #LinkedIn a,
+  #GitHub a {
     text-decoration: none;
     color: #ff00ff;
     text-shadow: 0 0 8px #ff00ff;
     transition: all 0.2s;
   }
 
-  #LinkedIn a:visited, #GitHub a:visited {
+  #LinkedIn a:visited,
+  #GitHub a:visited {
     text-decoration: none;
     color: #ff00ff;
   }
 
-  #LinkedIn a:hover, #GitHub a:hover {
+  #LinkedIn a:hover,
+  #GitHub a:hover {
     color: #fff;
     text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
   }
@@ -377,15 +389,15 @@
     text-transform: uppercase;
     border: 2px solid #00ffff;
     padding: 10px 25px;
-    box-shadow: 0 0 10px #00ffff, inset 0 0 5px rgba(0,255,255,0.1);
+    box-shadow: 0 0 10px #00ffff, inset 0 0 5px rgba(0, 255, 255, 0.1);
     transition: all 0.2s;
   }
-  
+
   #contentHolder #resumeContainer a:hover {
     color: #fff;
     text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
     background: rgba(0, 255, 255, 0.1);
-    box-shadow: 0 0 25px #00ffff, 0 0 50px rgba(0,255,255,0.3);
+    box-shadow: 0 0 25px #00ffff, 0 0 50px rgba(0, 255, 255, 0.3);
   }
 
   #contentHolder #resumeContainer button {
@@ -412,6 +424,52 @@
     text-align: left;
     overflow-y: auto;
     max-height: 380px;
+  }
+
+  /* Shared card styles for simple two-up card layouts (used by Contact) */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid rgba(191, 0, 255, 0.4);
+    padding: 10px 12px;
+    background: rgba(13, 2, 33, 0.75);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    border-color: #bf00ff;
+    box-shadow: 0 0 12px rgba(191, 0, 255, 0.6), inset 0 0 8px rgba(191, 0, 255, 0.1);
+    background: rgba(191, 0, 255, 0.08);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+
+  .card-header svg {
+    fill: #bf00ff;
+    filter: drop-shadow(0 0 4px #bf00ff);
+    flex-shrink: 0;
+  }
+
+  .card-name {
+    color: #bf00ff;
+    text-shadow: 0 0 8px #bf00ff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.05em;
   }
 
   #contentHolder #projectContainer .proj-card {
