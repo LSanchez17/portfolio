@@ -9,24 +9,28 @@ const projects = [
     {
         name: 'AdlessKitchen',
         desc: 'Recipe Extraction Service',
+        blurb: 'Strips ads and irrelevant content from recipe pages, returning clean cooking instructions. Just the recipe, nothing else.',
         url: 'https://github.com/LSanchez17/AdlessKitchen',
         lang: 'TypeScript'
     },
     {
         name: 'BrowserAgent',
         desc: 'Ollama-powered Browser Agent Microservice',
+        blurb: 'Uses local LLMs via Ollama to autonomously browse the web and extract structured data on demand — no cloud required.',
         url: 'https://github.com/LSanchez17/BrowserAgent',
         lang: 'Python'
     },
     {
         name: 'rpgDungeonCrawler',
         desc: 'Dungeon Crawling at its finest',
+        blurb: 'Turn-based RPG with procedurally generated dungeons, character classes, and combat. Explore, level up, and survive.',
         url: 'https://github.com/LSanchez17/rpgDungeonCrawler',
         lang: 'TypeScript'
     },
     {
         name: 'mathSheetGenerator',
         desc: 'Generates printable math problems',
+        blurb: 'Creates customizable printable worksheets with configurable difficulty levels and problem types for students of all ages.',
         url: 'https://github.com/LSanchez17/mathSheetGenerator',
         lang: 'TypeScript'
     }
@@ -44,6 +48,7 @@ export const Projects = ({reset}) => {
                             <span className="proj-name">{p.name}</span>
                         </div>
                         <p className="proj-desc">{p.desc}</p>
+                        <p className="proj-blurb">{p.blurb}</p>
                         <span className="proj-lang">{p.lang}</span>
                     </a>
                 ))}

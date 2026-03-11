@@ -402,7 +402,7 @@
     gap: 9px;
     text-align: left;
     overflow-y: auto;
-    max-height: 320px;
+    max-height: 400px;
   }
 
   #contentHolder #projectContainer .proj-card {
@@ -446,6 +446,14 @@
   #contentHolder #projectContainer .proj-desc {
     color: rgba(255, 255, 255, 0.75);
     font-size: 0.7rem;
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+  }
+
+  #contentHolder #projectContainer .proj-blurb {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.65rem;
     font-family: 'Share Tech Mono', monospace;
     margin: 0 0 6px 0;
     line-height: 1.4;
