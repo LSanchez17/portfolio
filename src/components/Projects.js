@@ -11,28 +11,28 @@ const projects = [
         desc: 'Recipe Extraction Service',
         blurb: 'Strips ads and irrelevant content from recipe pages, returning clean cooking instructions. Just the recipe, nothing else.',
         url: 'https://github.com/LSanchez17/AdlessKitchen',
-        lang: 'TypeScript'
+        lang: ['TypeScript', 'Python']
     },
     {
         name: 'BrowserAgent',
         desc: 'Ollama-powered Browser Agent Microservice',
         blurb: 'Uses local LLMs via Ollama to autonomously browse the web and extract structured data on demand — no cloud required.',
         url: 'https://github.com/LSanchez17/BrowserAgent',
-        lang: 'Python'
+        lang: ['Python']
     },
     {
-        name: 'rpgDungeonCrawler',
-        desc: 'Dungeon Crawling at its finest',
-        blurb: 'Turn-based RPG with procedurally generated dungeons, character classes, and combat. Explore, level up, and survive.',
-        url: 'https://github.com/LSanchez17/rpgDungeonCrawler',
-        lang: 'TypeScript'
+        name: 'Midnight-Drive-inn',
+        desc: 'The Drive-Inn will never die!',
+        blurb: 'Tauri based application. Fully local video player to load up Joe Bob segments alongside the appropriate movie for a true, Drive-Inn experience.',
+        url: 'https://github.com/LSanchez17/Midnight-Drivein',
+        lang: ['TypeScript', 'Rust']
     },
     {
         name: 'mathSheetGenerator',
         desc: 'Generates printable math problems',
         blurb: 'Creates customizable printable worksheets with configurable difficulty levels and problem types for students of all ages.',
         url: 'https://github.com/LSanchez17/mathSheetGenerator',
-        lang: 'TypeScript'
+        lang: ['TypeScript']
     }
 ]
 
@@ -49,7 +49,7 @@ export const Projects = ({reset}) => {
                         </div>
                         <p className="proj-desc">{p.desc}</p>
                         <p className="proj-blurb">{p.blurb}</p>
-                        <span className="proj-lang">{p.lang}</span>
+                        <span className="proj-lang">{p.lang.join(', ')}</span>
                     </a>
                 ))}
             </div>
