@@ -49,7 +49,7 @@ export const Projects = ({reset}) => {
                         </div>
                         <p className="proj-desc">{p.desc}</p>
                         <p className="proj-blurb">{p.blurb}</p>
-                        <span className="proj-lang">{p.join(', ')}</span>
+                        <span className="proj-lang">{p.lang.join(', ')}</span>
                     </a>
                 ))}
             </div>
