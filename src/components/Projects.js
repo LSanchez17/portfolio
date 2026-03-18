@@ -21,9 +21,9 @@ const projects = [
         lang: ['Python']
     },
     {
-        name: 'Midnight-Drive-inn',
-        desc: 'The Drive-Inn will never die!',
-        blurb: 'Tauri based application. Fully local video player to load up Joe Bob segments alongside the appropriate movie for a true, Drive-Inn experience.',
+        name: 'Midnight-Drivein',
+        desc: 'The Drive-In will never die!',
+        blurb: 'Tauri based application. Fully local video player to load up Joe Bob segments alongside the appropriate movie for a true, Drive-In experience.',
         url: 'https://github.com/LSanchez17/Midnight-Drivein',
         lang: ['TypeScript', 'Rust']
     },
